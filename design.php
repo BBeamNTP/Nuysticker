@@ -1,15 +1,15 @@
 <?php
 require 'connection.php';
 session_start();
-if (isset($_SESSION['email'])) {
-    header('location: products.php');
+if(!isset($_SESSION['email'])){
+    header('location: login.php');
 }
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="shortcut icon" href="img/lifestyleStore.png"/>
+    <link rel="shortcut icon" href="img/logo.jpg"/>
     <title>NuySticker Shop</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,10 +75,6 @@ if (isset($_SESSION['email'])) {
                     <div style="height: 500px; width: 560px">
                         <h1><b>สั่งทำสติกเกอร์</b></h1>
                         <form action="detail.php" method="post" enctype="multipart/form-data">
-                            <!--                            <div class="form-group">-->
-                            <!--                                <input type="text" class="form-control" name="name" id="name" placeholder="ชื่อสินค้า" required>-->
-                            <!--                            </div>-->
-
 
                             <div class="form-group">
                                 <label for="comment">ขนาดสติกเกอร์ / 1 รูป :</label>
@@ -137,11 +133,9 @@ if (isset($_SESSION['email'])) {
                             </div>
                             <p id="demo5" hidden></p>
                             <p id="demo6"></p>
-
-                            <br>
                             <div class="form-group">
                                 <label for="comment">รายละเอียดเพิ่มเติม:</label>
-                                <textarea class="form-control" rows="5" id="comment"></textarea>
+                                <textarea class="form-control" rows="3" id="comment"></textarea>
                             </div>
 
                             <div class="fileinputs">
@@ -151,7 +145,6 @@ if (isset($_SESSION['email'])) {
                                     <input type="button" value="ค้นหาไฟล์"/>
                                     <span id="showtext"> ที่อยู่ไฟล์ </span></div>
                             </div>
-                            <br>
                             <br>
                             <script>
                                 var filename = document.getElementById('fileToUpload');
@@ -165,7 +158,6 @@ if (isset($_SESSION['email'])) {
                                     };
                                 };
                             </script>
-                            <br>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary" value="ถัดไป">
                             </div>
@@ -188,7 +180,7 @@ if (isset($_SESSION['email'])) {
             <td>&nbsp;</td>
         </tr>
     </table>
-    <br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
     <footer class="footer">
         <div class="container">
             <center>

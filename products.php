@@ -48,7 +48,7 @@ if ($type == "Letter"){
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="shortcut icon" href="img/lifestyleStore.png"/>
+    <link rel="shortcut icon" href="img/logo.jpg"/>
     <title>NuySticker Store</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -103,7 +103,7 @@ if ($type == "Letter"){
                             <!--<p> <h5 class="text-info">คงเหลือ : <?php /*echo $row['stock'];*/?> ชิ้น </p>-->
 
                             <form id="form1" name="form1" method="post" action="cart_add.php?id=<?php echo $row['id'];?>&type=<?php echo $type;?>">
-                                <p> <input type="number" name="num1" id="num1" pattern="" class="caption" /></p>
+                                <p> <input type="number" name="num1" id="num1" pattern="[0-9]" class="caption" value="1"/></p>
                             <?php if (!isset($_SESSION['email'])) { ?>
                                 <p><a href="login.php" role="button" class="btn btn-primary btn-block">สินค้าทั้งหมดที่นี่ เลย</a></p>
                                 <?php

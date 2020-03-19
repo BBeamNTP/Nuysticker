@@ -33,7 +33,7 @@
         <meta http-equiv="refresh" content="1;url=signup.php" />
         <?php
     }else{
-        $user_registration_query="insert into users(name,email,password,contact,city,address) values ('$name','$email','$password','$contact','$city','$address')";
+        $user_registration_query="insert into users(name,email,password,contact,city,address, status) values ('$name','$email','$password','$contact','$city','$address','Member')";
         //die($user_registration_query);
         $user_registration_result=mysqli_query($con,$user_registration_query) or die(mysqli_error($con));
         echo "User successfully registered";
@@ -42,7 +42,7 @@
         $_SESSION['id']=mysqli_insert_id($con); 
         //header('location: products.php');  //for redirecting
         ?>
-        <meta http-equiv="refresh" content="3;url=products.php" />
+        <meta http-equiv="refresh" content="3;url=index.php" />
         <?php
     }
     

@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f5e22d20-ef0a-4c41-8dd1-d02b0a80bdd0" name="Default Changelist" comment="" />
+    <list default="true" id="f5e22d20-ef0a-4c41-8dd1-d02b0a80bdd0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deleteproduct.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/headeradmin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settingsadmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Picture32.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addproduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/addproduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/design.php" beforeDir="false" afterPath="$PROJECT_DIR$/design.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login_submit.php" beforeDir="false" afterPath="$PROJECT_DIR$/login_submit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/settings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/signup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/success.php" beforeDir="false" afterPath="$PROJECT_DIR$/success.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_registration_script.php" beforeDir="false" afterPath="$PROJECT_DIR$/user_registration_script.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +36,9 @@
       <executable />
     </execution>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
@@ -26,6 +50,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="go.import.settings.migrated" value="true" />
@@ -66,6 +91,9 @@
       <workItem from="1584446407174" duration="4990000" />
       <workItem from="1584497719422" duration="30370000" />
       <workItem from="1584596354647" duration="9799000" />
+      <workItem from="1584617080068" duration="3145000" />
+      <workItem from="1584627452542" duration="41000" />
+      <workItem from="1584628762183" duration="15703000" />
     </task>
     <servers />
   </component>
@@ -81,21 +109,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="640" y="248" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1584083538189" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1584460081362">
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584651725518">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1584460081362" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1584609112083">
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1584651725518" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1584617866670">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1584609112083" />
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1584596477578">
+    <state x="740" y="275" key="FileChooserDialogImpl/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1584617866670" />
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1584631438922">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1584596477578" />
-    <state x="0" y="0" width="1920" height="1040" key="find.popup" timestamp="1584526878453">
+    <state x="794" y="443" key="NewPhpFileDialog/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1584631438922" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1584629454401">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="0" width="1920" height="1040" key="find.popup/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1584526878453" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1584629454401" />
+    <state x="0" y="0" width="1920" height="1040" key="find.popup" timestamp="1584651561986">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="0" y="0" width="1920" height="1040" key="find.popup/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1584651561986" />
   </component>
 </project>

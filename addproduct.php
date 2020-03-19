@@ -1,15 +1,15 @@
 <?php
 require 'connection.php';
 session_start();
-if(isset($_SESSION['email'])){
-    header('location: products.php');
+if(!isset($_SESSION['email'])){
+    header('location: login.php');
 }
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="shortcut icon" href="img/lifestyleStore.png" />
+    <link rel="shortcut icon" href="img/logo.jpg" />
     <title>NuySticker Shop</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,7 +62,7 @@ if(isset($_SESSION['email'])){
 <body>
 <div>
     <?php
-    require 'header.php';
+    require 'headeradmin.php';
     ?>
     <table width="1226" border="0" align="center">
         <tr>

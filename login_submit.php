@@ -1,6 +1,7 @@
 <?php
     require 'connection.php';
     session_start();
+
     $email=mysqli_real_escape_string($con,$_POST['email']);
     $regex_email="/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[_a-z0-9-]+)*(\.[a-z]{2,3})$/";
     if(!preg_match($regex_email,$email)){
@@ -16,7 +17,7 @@
         <meta http-equiv="refresh" content="2;url=login.php" />
         <?php
     }
-    $user_authentication_query="select id,email from users where email='$email' and password='$password'";
+    $user_authentication_query="select id, email, status from users where email='$email' and password='$password'";
     $user_authentication_result=mysqli_query($con,$user_authentication_query) or die(mysqli_error($con));
     $rows_fetched=mysqli_num_rows($user_authentication_result);
     if($rows_fetched==0){
@@ -34,7 +35,14 @@
         $row=mysqli_fetch_array($user_authentication_result);
         $_SESSION['email']=$email;
         $_SESSION['id']=$row['id'];  //user id
-        header('location: products.php');
+        $_SESSION['status']=$row['status']; //status user
+        if($_SESSION['status']=="Admin"){ //ถ้าเป็น admin ให้กระโดดไปหน้า admin_page.php
+            header('location: admin.php');
+        }
+
+        if ($_SESSION['status']=="Member"){  //ถ้าเป็น member ให้กระโดดไปหน้า user_page.php
+            header('location: index.php');
+        }
     }
     
  ?>

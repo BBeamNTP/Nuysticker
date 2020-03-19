@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="shortcut icon" href="img/lifestyleStore.png" />
+        <link rel="shortcut icon" href="img/logo.jpg" />
         <title>NuySticker Shop</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -77,9 +77,20 @@ session_start();
                    </div>
                    <div class="col-xs-3">
                        <div class="thumbnail">
+                           <?php if (!isset($_SESSION['email'])) { ?>
+                               <p><a href="login.php" </p>
+                               <img src="img/138475.jpg" alt="Design">
+
+                               <?php
+                           } else { ?>
                            <a href="design.php">
                                <img src="img/138475.jpg" alt="Design">
                            </a>
+                           <?php
+                           }
+                           ?>
+
+
                            <center>
                                <div class="caption">
                                    <p id="autoResize">สั่งสติกเกอร์ออกแบบ</p>

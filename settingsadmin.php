@@ -1,7 +1,10 @@
 <?php
     session_start();
-    session_unset();
-    session_destroy();
+    require 'connection.php';
+    if(!isset($_SESSION['email'])){
+        header('location:index.php');
+    }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,27 +25,34 @@
     <body>
         <div>
             <?php
-                require 'header.php';
+                require 'headeradmin.php';
             ?>
             <br>
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-6">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading"></div>
-                            <div class="panel-body">
-                                <p>You have been logged out. <a href="login.php">Login again.</a></p>
-                                <?php header('location: index.php'); ?>
-<!--                                <meta http-equiv="refresh" content="1;url=index.php" />-->
-
+                    <div class="col-xs-4 col-xs-offset-4">
+                        <h1>Change Password</h1>
+                        <form method="post" action="setting_script.php">
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="oldPassword" placeholder="Old Password">
                             </div>
-                        </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="newPassword" placeholder="New Password">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="retype" placeholder="Re-type new password">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary" value="Change">
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-            <footer class="footer">
+            <br><br><br><br><br>
+           <footer class="footer">
                <div class="container">
-                <center>
+               <center>
                    <p>Copyright &copy <a href="https://projectworlds.in">Projectworlds</a> Store. All Rights Reserved.</p>
                    <p>This website is developed by Yugesh Verma</p>
                </center>
