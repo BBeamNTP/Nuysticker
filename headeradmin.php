@@ -6,7 +6,8 @@
                            <span class="icon-bar"></span>
                            <span class="icon-bar"></span>
                        </button>
-                       <a href="admin.php" class="navbar-brand">NuySticker Shop</a>
+                       <a href="admin.php"><img src="img/logo.jpg" align="left" width="50px" height="auto" border="0" style="margin-right:20px"/></a>
+                       <a href="admin.php" class="navbar-brand">Nuy Sticker Shop</a>
                    </div>
 
                    <div class="collapse navbar-collapse" id="myNavbar">

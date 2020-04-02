@@ -2,26 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5e22d20-ef0a-4c41-8dd1-d02b0a80bdd0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deleteproduct.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/headeradmin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settingsadmin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/storeV4-02-04-63.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/detailbilling.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Picture32.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/addproduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/addproduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminquery.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminquery.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/design.php" beforeDir="false" afterPath="$PROJECT_DIR$/design.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart_add.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart_add.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login_submit.php" beforeDir="false" afterPath="$PROJECT_DIR$/login_submit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/headeradmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/headeradmin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/products.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/signup.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/success.php" beforeDir="false" afterPath="$PROJECT_DIR$/success.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_registration_script.php" beforeDir="false" afterPath="$PROJECT_DIR$/user_registration_script.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/update.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/updateproduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/updateproduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/upload.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,12 +42,16 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1Z0wnZRprckNRX4KMRIJg2aiy5D" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -61,10 +64,12 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Nuysticker" />
+      <recent name="C:\xampp\htdocs\Nuysticker\invoice" />
       <recent name="C:\xampp\htdocs\Nuysticker\css" />
     </key>
   </component>
@@ -93,12 +98,28 @@
       <workItem from="1584596354647" duration="9799000" />
       <workItem from="1584617080068" duration="3145000" />
       <workItem from="1584627452542" duration="41000" />
-      <workItem from="1584628762183" duration="15703000" />
+      <workItem from="1584628762183" duration="15937000" />
+      <workItem from="1584680118687" duration="19621000" />
+      <workItem from="1584700504474" duration="4128000" />
+      <workItem from="1584758809212" duration="13007000" />
+      <workItem from="1584968728907" duration="7367000" />
+      <workItem from="1585122106832" duration="499000" />
+      <workItem from="1585289739340" duration="315000" />
+      <workItem from="1585812183252" duration="235000" />
+      <workItem from="1585812443329" duration="2777000" />
+      <workItem from="1585815248418" duration="1161000" />
+      <workItem from="1585817388302" duration="4336000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.php" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="667" y="110" key="#PHP" timestamp="1583992312945">
@@ -117,17 +138,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1584617866670" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1584631438922">
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1584786369470">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1584631438922" />
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1584629454401">
+    <state x="794" y="443" key="NewPhpFileDialog/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1584786369470" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1585815222899">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1584629454401" />
-    <state x="0" y="0" width="1920" height="1040" key="find.popup" timestamp="1584651561986">
+    <state x="461" y="162" key="SettingsEditor/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585815222899" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1585817417347">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="0" width="1920" height="1040" key="find.popup/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1584651561986" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585817417347" />
+    <state x="547" y="284" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1040@0.0.1600.860" timestamp="1585289763547" />
+    <state x="0" y="0" width="1920" height="1040" key="find.popup" timestamp="1585821437253">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="0" y="0" width="1920" height="1040" key="find.popup/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585821437253" />
   </component>
 </project>

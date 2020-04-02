@@ -5,9 +5,35 @@
         header('location:index.php');
     }else{
         $user_id=$_GET['id'];
-        $confirm_query="update users_items set status='Confirmed' where user_id=$user_id";
+
+        $sql3 = "select MAX(bill_id) from users_items where user_id='$user_id' and status='Confirmed'";
+
+        $result3=mysqli_query($con,$sql3);
+        $dbarr = mysqli_fetch_row($result3) ;
+        $bill_id = $dbarr[0]+1 ; // นำค่า id มาเพิ่มให้กับค่ารหัสสินค้าครั้งละ1
+
+        $confirm_query="update users_items set status='Confirmed', bill_id='$bill_id' where user_id=$user_id and status='Added to cart' and bill_id='0'";
         $confirm_query_result=mysqli_query($con,$confirm_query) or die(mysqli_error($con));
-        
+
+        function DateThai($strDate)
+        {
+            $strYear = date("Y",strtotime($strDate))+543; // ปี
+            $strMonth= date("n",strtotime($strDate));
+            $strDay= date("j",strtotime($strDate));
+            $strHour= date("H",strtotime($strDate))+5; // ชั่วโมง
+            $strMinute= date("i",strtotime($strDate));
+            $strSeconds= date("s",strtotime($strDate));
+            $strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
+            $strMonthThai=$strMonthCut[$strMonth];
+            return "$strDay $strMonthThai $strYear, $strHour:$strMinute";
+        }
+
+        $strDate = date('Y-m-d H:i:s');
+        $date = DateThai($strDate)." น.";
+
+        $add_billing_query = "insert into billing(id, user_id, status, time) values ('$bill_id', '$user_id','Not paid','$date')";
+        $add_billing_result = mysqli_query($con, $add_billing_query) or die(mysqli_error($con));
+
     }
 ?>
 <!DOCTYPE html>

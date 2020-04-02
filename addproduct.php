@@ -1,7 +1,7 @@
 <?php
 require 'connection.php';
 session_start();
-if(!isset($_SESSION['email'])){
+if (!isset($_SESSION['email'])) {
     header('location: login.php');
 }
 ?>
@@ -9,7 +9,7 @@ if(!isset($_SESSION['email'])){
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="shortcut icon" href="img/logo.jpg" />
+    <link rel="shortcut icon" href="img/logo.jpg"/>
     <title>NuySticker Shop</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,25 +25,28 @@ if(!isset($_SESSION['email'])){
         div.fileinputs {
             position: relative;
         }
+
         div.fakefile {
             position: absolute;
             top: 0px;
             left: 0px;
             z-index: 1;
         }
+
         input.file {
             position: relative;
             text-align: right;
-            -moz-opacity:0 ;
-            filter:alpha(opacity: 0);
+            -moz-opacity: 0;
+            filter: alpha(opacity:0);
             opacity: 0;
             z-index: 2;
         }
 
-        #showImage{
+        #showImage {
             display: none;
         }
-        #showImage[src]{
+
+        #showImage[src] {
             display: block;
             height: 400px;
             border: solid 5px #000;
@@ -53,7 +56,7 @@ if(!isset($_SESSION['email'])){
 
     </style>
     <script>
-        function showtxt(){
+        function showtxt() {
             var fartxt = document.getElementById('fileToUpload').value;
             document.getElementById('showtext').innerHTML = fartxt;
         }
@@ -67,42 +70,53 @@ if(!isset($_SESSION['email'])){
     <table width="1226" border="0" align="center">
         <tr>
             <td width="68" rowspan="3">&nbsp;</td>
-            <td width="509" rowspan="3"><div >
+            <td width="509" rowspan="3">
+                <div>
                     <div style="height: 500px; width: 500px">
                         <h1><b>เพิ่มรายการสินค้า</b></h1>
                         <form action="upload.php" method="post" enctype="multipart/form-data">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="name" id="name" placeholder="ชื่อสินค้า" required>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="ชื่อสินค้า"
+                                       required>
                             </div>
                             <div class="form-group">
-                                <input type="number" class="form-control" name="price" id="price" placeholder="ราคาสินค้า / ชิ้น เช่น 100" required pattern="">
+                                <input type="number" class="form-control" name="price" id="price"
+                                       placeholder="ราคาสินค้า / ชิ้น เช่น 100" required pattern="">
                             </div>
                             <div class="form-check"> ประเภท :&nbsp;
-                                <input type="radio" name="types" <?php if (isset($types) && $types=="female") echo "checked";?> value="Letter" checked >
+                                <input type="radio"
+                                       name="types" <?php if (isset($types) && $types == "female") echo "checked"; ?>
+                                       value="Letter" checked>
                                 ตัวหนังสือ
                                 &nbsp;
-                                <input type="radio" name="types" <?php if (isset($types) && $types=="male") echo "checked";?> value="Picture">
+                                <input type="radio"
+                                       name="types" <?php if (isset($types) && $types == "male") echo "checked"; ?>
+                                       value="Picture">
                                 รูปภาพ
                                 &nbsp;
-                                <input type="radio" name="types" <?php if (isset($types) && $types=="other") echo "checked";?> value="DesignExample">
+                                <input type="radio"
+                                       name="types" <?php if (isset($types) && $types == "other") echo "checked"; ?>
+                                       value="DesignExample">
                                 งานออกแบบเอง
-                                &nbsp; </div>
+                                &nbsp;
+                            </div>
                             <br>
                             <div class="fileinputs">
-                                <input type="file" class="file"  name="fileToUpload" id="fileToUpload" onchange="showtxt()"/>
+                                <input type="file" class="file" name="fileToUpload" id="fileToUpload"
+                                       onchange="showtxt()"/>
                                 <div class="fakefile">
-                                    <input type="button" value="ค้นหาไฟล์"  />
-                                    <span id="showtext"> ที่อยู่ไฟล์ </span> </div>
+                                    <input type="button" value="ค้นหาไฟล์"/>
+                                    <span id="showtext"> ที่อยู่ไฟล์ </span></div>
                             </div>
                             <br>
                             <br>
                             <script>
                                 var filename = document.getElementById('fileToUpload');
-                                filename.onchange = function(){
+                                filename.onchange = function () {
                                     var files = filename.files[0];
                                     var reader = new FileReader();
                                     reader.readAsDataURL(files);
-                                    reader.onload = function(){
+                                    reader.onload = function () {
                                         var result = reader.result;
                                         document.getElementById('showImage').src = result;
                                     };
@@ -119,19 +133,20 @@ if(!isset($_SESSION['email'])){
                             </div>
                         </form>
                     </div>
-                </div></td>
+                </div>
+            </td>
             <td width="35">&nbsp;</td>
             <td width="558" height="73">&nbsp;</td>
             <td width="34" rowspan="3">&nbsp;</td>
         </tr>
         <tr>
-          <td>&nbsp;</td>
+            <td>&nbsp;</td>
             <td height="401">
                 <img align="right" id="showImage" class="rounded-circle" alt="Cinque Terre" width="auto" height="auto">
             </td>
         </tr>
         <tr>
-          <td>&nbsp;</td>
+            <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
     </table>

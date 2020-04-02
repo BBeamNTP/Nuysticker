@@ -5,7 +5,7 @@
         header('location: login.php');
     }
     $user_id=$_SESSION['id'];
-    $user_products_query="select * from users_items ut inner join items it on it.id=ut.item_id where ut.user_id='$user_id'";
+    $user_products_query="select * from users_items ut inner join items it on it.id=ut.item_id where ut.user_id='$user_id' and ut.status = 'Added to cart'";
     $user_products_result=mysqli_query($con,$user_products_query) or die(mysqli_error($con));
     $no_of_user_products= mysqli_num_rows($user_products_result);
     $sum=0;

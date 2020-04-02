@@ -17,7 +17,7 @@ echo " id : ".$item_id = $dbarr[0]+1 ; // นำค่า id มาเพิ่�
 echo " path : ".$path = $types.(string)$item_id.".jpg";
 
 
-$target_dir = "img/";
+$target_dir = "img/".$types."/";
 //$target_file = $target_dir . basename($_FILES.$path); //ชื่อไฟล์แบบเดิม
 $target_file = $target_dir . $path;  //เปลียรนชื่อไฟล์ใหม่
 
@@ -62,7 +62,7 @@ if ($uploadOk == 0) {
         mysqli_close($con);
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
         function_alert("สร้างรายการสินค้าเรียบร้อยแล้ว");
-//        echo "<meta http-equiv='refresh' content='0;url=addproduct.php'>";
+        echo "<meta http-equiv='refresh' content='0;url=addproduct.php'>";
         exit();
 
 

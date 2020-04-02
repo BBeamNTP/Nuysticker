@@ -5,16 +5,16 @@ function function_alert($message) {
     echo "<script>alert('$message');</script>";
 }
 require 'connection.php';
-
-echo " name : ".$name = $_POST['name'];
-echo " price : ".$price = $_POST['price'];
-echo " types : ".$types = $_POST['types'];
-$sql = "select * from items order by id desc limit 0,1";
+$item_id = $_GET['id'];
+$name = $_POST['name'];
+$price = $_POST['price'];
+$types = $_POST['types'];
+$sql = "select * from items where id = '$item_id'";
 $result=mysqli_query($con,$sql);
 $num_result = mysqli_num_rows($result);
 $dbarr = mysqli_fetch_row($result) ;
-echo " id : ".$item_id = $dbarr[0]+1 ; // นำค่า id มาเพิ่มให้กับค่ารหัสสินค้าครั้งละ1
-echo " path : ".$path = $types.(string)$item_id.".jpg";
+//echo " id : ".$item_id = $dbarr[0]+1 ; // นำค่า id มาเพิ่มให้กับค่ารหัสสินค้าครั้งละ1
+$path = $types.(string)$item_id.".jpg";
 
 
 $target_dir = "img/".$types."/";
@@ -57,15 +57,14 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo " path : ".$target_file;
-        $add_items_query = "insert into items(id, types, name, price, image) values ('$item_id','$types','$name', '$price','$target_file')";
+        $add_items_query = "UPDATE `items` SET `types`='$types',`name`='$name',`price`='$price',`image`='$target_file' WHERE id = '$item_id'";
         $add_items_result = mysqli_query($con, $add_items_query) or ecdie(mysqli_error($con));
         mysqli_close($con);
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-        function_alert("สร้างรายการสินค้าเรียบร้อยแล้ว");
-        echo "<meta http-equiv='refresh' content='0;url=addproduct.php'>";
+        function_alert("แก้ไขรายการสินค้าเรียบร้อยแล้ว");
+//        "<meta http-equiv='refresh' content='0;url=updateproduct.php?id= $item_id'>";
+        header("location: updateproduct.php?&id=$item_id");
         exit();
-
-
     } else {
         echo "Sorry, there was an error uploading your file.";
     }

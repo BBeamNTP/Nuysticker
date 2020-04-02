@@ -84,8 +84,6 @@ if ($type == "Letter"){
             <h2>Welcome to NuySticker Shop!</h2>
         </div>
     </div>
-
-
     <div class="container">
         <div class="row">
             <?php
@@ -101,7 +99,6 @@ if ($type == "Letter"){
                             <h3><?php echo $row['name'];?></h3>
                             <p> <h4 class="text-info">ราคา : <?php echo $row['price'];?> บาท/ชิ้น </p>
                             <!--<p> <h5 class="text-info">คงเหลือ : <?php /*echo $row['stock'];*/?> ชิ้น </p>-->
-
                             <form id="form1" name="form1" method="post" action="cart_add.php?id=<?php echo $row['id'];?>&type=<?php echo $type;?>">
                                 <p> <input type="number" name="num1" id="num1" pattern="[0-9]" class="caption" value="1"/></p>
                             <?php if (!isset($_SESSION['email'])) { ?>
