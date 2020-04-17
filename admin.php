@@ -1,8 +1,11 @@
 <?php
 session_start();
 require 'connection.php';
-if (!isset($_SESSION['email'])) {
+if ((!isset($_SESSION['email']) && ($_SESSION['status'] != "Admin")) ) {
     header('location: login.php');
+}
+if (($_SESSION['status'] != "Admin")) {
+    header('location: index.php');
 }
 $user_id = $_SESSION['id'];
 ?>
@@ -156,7 +159,7 @@ $user_id = $_SESSION['id'];
                                 function upDate() {
                                     if (confirm('คุณต้องการลบ ใช่ หรือ ไม่') == true) {
                                         // alert('ลบเรียบร้อยแล้ว');
-                                        window.location.href = 'updateproduct.php?id=<?php echo $row['id'] ?>';
+                                        window.location.href = 'adminupdateproduct.php?id=<?php echo $row['id'] ?>';
                                     }
                                 }
                             </script>
@@ -164,7 +167,7 @@ $user_id = $_SESSION['id'];
                                    value="ลบรายการ"
                                    OnClick="chkConfirm()">
                             <input type="button" class="btn btn-warning" name="btnConfirm" value="ยืนยันแก้ไข"
-                                   onclick="window.location.href='updateproduct.php?id=<?php echo $row['id'] ?>'">
+                                   onclick="window.location.href='adminupdateproduct.php?id=<?php echo $row['id'] ?>'">
                         </th>
                     </form>
                 </tr>

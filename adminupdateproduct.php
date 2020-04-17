@@ -1,15 +1,17 @@
 <?php
 session_start();
 require 'connection.php';
-if (!isset($_SESSION['email'])) {
+if ((!isset($_SESSION['email']) && ($_SESSION['status'] != "Admin")) ) {
     header('location: login.php');
+}
+if (($_SESSION['status'] != "Admin")) {
+    header('location: index.php');
 }
 $user_id = $_SESSION['id'];
 $item_id = $_GET['id'];
 $user_products_query = "select * from items where id = '$item_id'";
 $user_products_result = mysqli_query($con, $user_products_query) or die(mysqli_error($con));
 $no_of_user_products = mysqli_num_rows($user_products_result);
-
 
 ?>
 <!DOCTYPE html>

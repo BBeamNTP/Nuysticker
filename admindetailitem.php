@@ -1,9 +1,13 @@
 <?php
 session_start();
 require 'connection.php';
-if (!isset($_SESSION['email'])) {
+if ((!isset($_SESSION['email']) && ($_SESSION['status'] != "Admin")) ) {
     header('location: login.php');
 }
+if (($_SESSION['status'] != "Admin")) {
+    header('location: index.php');
+}
+
 $user_id = $_GET['user_id'];
 $billing_id = $_GET['id'];
 $user_query = "select id, name, email, contact, city, address from users where id = '$user_id'";

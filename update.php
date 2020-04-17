@@ -66,8 +66,8 @@ if ($uploadOk == 0) {
         mysqli_close($con);
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
         function_alert("แก้ไขรายการสินค้าเรียบร้อยแล้ว");
-//        "<meta http-equiv='refresh' content='0;url=updateproduct.php?id= $item_id'>";
-        header("location: updateproduct.php?&id=$item_id");
+//        "<meta http-equiv='refresh' content='0;url=adminupdateproduct.php?id= $item_id'>";
+        header("location: adminupdateproduct.php?&id=$item_id");
         exit();
     } else {
         echo "Sorry, there was an error uploading your file.";

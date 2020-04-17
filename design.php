@@ -1,8 +1,11 @@
 <?php
 require 'connection.php';
 session_start();
-if (!isset($_SESSION['email'])) {
+if ((!isset($_SESSION['email']) && ($_SESSION['status'] != "Member")) ) {
     header('location: login.php');
+}
+if (($_SESSION['status'] != "Member")) {
+    header('location: admin.php');
 }
 ?>
 

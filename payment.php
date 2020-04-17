@@ -1,8 +1,11 @@
 <?php
 session_start();
 require 'connection.php';
-if (!isset($_SESSION['email'])) {
+if ((!isset($_SESSION['email']) && ($_SESSION['status'] != "Member")) ) {
     header('location: login.php');
+}
+if (($_SESSION['status'] != "Member")) {
+    header('location: admin.php');
 }
 $user_id = $_SESSION['id'];
 
