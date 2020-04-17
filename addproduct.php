@@ -5,21 +5,16 @@ if (!isset($_SESSION['email'])) {
     header('location: login.php');
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="shortcut icon" href="img/logo.jpg"/>
+    <link rel="shortcut icon" href="img/logo3.jpg"/>
     <title>NuySticker Shop</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- latest compiled and minified CSS -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css">
-    <!-- jquery library -->
     <script type="text/javascript" src="bootstrap/js/jquery-3.2.1.min.js"></script>
-    <!-- Latest compiled and minified javascript -->
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-    <!-- External CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <style>
         div.fileinputs {
@@ -53,7 +48,6 @@ if (!isset($_SESSION['email'])) {
             border-radius: 5px;
             margin-top: 30px;
         }
-
     </style>
     <script>
         function showtxt() {
@@ -88,21 +82,18 @@ if (!isset($_SESSION['email'])) {
                                        name="types" <?php if (isset($types) && $types == "female") echo "checked"; ?>
                                        value="Letter" checked>
                                 ตัวหนังสือ
-                                &nbsp;
                                 <input type="radio"
                                        name="types" <?php if (isset($types) && $types == "male") echo "checked"; ?>
                                        value="Picture">
                                 รูปภาพ
-                                &nbsp;
                                 <input type="radio"
                                        name="types" <?php if (isset($types) && $types == "other") echo "checked"; ?>
                                        value="DesignExample">
                                 งานออกแบบเอง
-                                &nbsp;
                             </div>
                             <br>
                             <div class="fileinputs">
-                                <input type="file" class="file" name="fileToUpload" id="fileToUpload"
+                                <input type="file" class="file" name="fileToUpload" id="fileToUpload" accept="image/*"
                                        onchange="showtxt()"/>
                                 <div class="fakefile">
                                     <input type="button" value="ค้นหาไฟล์"/>
@@ -122,12 +113,7 @@ if (!isset($_SESSION['email'])) {
                                     };
                                 };
                             </script>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <br>
+                            <br><br><br><br><br><br>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary" value="สร้าง">
                             </div>

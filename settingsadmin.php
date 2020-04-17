@@ -9,17 +9,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="shortcut icon" href="img/logo.jpg" />
+        <link rel="shortcut icon" href="img/logo3.jpg" />
         <title>Projectworlds Store</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- latest compiled and minified CSS -->
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css">
-        <!-- jquery library -->
         <script type="text/javascript" src="bootstrap/js/jquery-3.2.1.min.js"></script>
-        <!-- Latest compiled and minified javascript -->
         <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-        <!-- External CSS -->
         <link rel="stylesheet" href="css/style.css" type="text/css">
     </head>
     <body>
@@ -31,19 +27,19 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-4 col-xs-offset-4">
-                        <h1>Change Password</h1>
+                        <h1>เปลี่ยนรหัสผ่าน</h1>
                         <form method="post" action="setting_script.php">
                             <div class="form-group">
-                                <input type="password" class="form-control" name="oldPassword" placeholder="Old Password">
+                                <input type="password" class="form-control" name="oldPassword" placeholder="รหัสผ่านเก่า">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" name="newPassword" placeholder="New Password">
+                                <input type="password" class="form-control" name="newPassword" placeholder="รหัสผ่านใหม่">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" name="retype" placeholder="Re-type new password">
+                                <input type="password" class="form-control" name="retype" placeholder="รหัสผ่านใหม่ อีกครั้ง">
                             </div>
                             <div class="form-group">
-                                <input type="submit" class="btn btn-primary" value="Change">
+                                <input type="submit" class="btn btn-primary" value="ยืนยัน">
                             </div>
                         </form>
                     </div>

@@ -4,6 +4,10 @@ function function_alert($message) {
     // Display the alert box
     echo "<script>alert('$message');</script>";
 }
+session_start();
+if(!isset($_SESSION['email'])){
+    header('location: login.php');
+}
 require 'connection.php';
 $item_id = $_GET['id'];
 $name = $_POST['name'];
@@ -58,7 +62,7 @@ if ($uploadOk == 0) {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo " path : ".$target_file;
         $add_items_query = "UPDATE `items` SET `types`='$types',`name`='$name',`price`='$price',`image`='$target_file' WHERE id = '$item_id'";
-        $add_items_result = mysqli_query($con, $add_items_query) or ecdie(mysqli_error($con));
+        $add_items_result = mysqli_query($con, $add_items_query) or die(mysqli_error($con));
         mysqli_close($con);
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
         function_alert("แก้ไขรายการสินค้าเรียบร้อยแล้ว");

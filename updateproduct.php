@@ -15,7 +15,7 @@ $no_of_user_products = mysqli_num_rows($user_products_result);
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="shortcut icon" href="img/logo.jpg"/>
+    <link rel="shortcut icon" href="img/logo3.jpg"/>
     <title>Projectworlds Store</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -149,7 +149,7 @@ $no_of_user_products = mysqli_num_rows($user_products_result);
                                 </div>
                                 <br>
                                 <div class="fileinputs">
-                                    <input type="file" class="file" name="fileToUpload" id="fileToUpload"
+                                    <input type="file" class="file" name="fileToUpload" id="fileToUpload"  accept="image/*"
                                            onchange="showtxt()"/>
                                     <div class="fakefile">
                                         <input type="button" value="ค้นหาไฟล์"/>

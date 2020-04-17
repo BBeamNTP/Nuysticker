@@ -30,7 +30,7 @@ echo "TotalPrice : " . $totalprice;
 
 
 $add_to_cart_query = "insert into users_items(user_id,item_id,status, quantity, totalprice) values ('$user_id','$item_id','Added to cart', '$num1' , '$totalprice')";
-$add_to_cart_result = mysqli_query($con, $add_to_cart_query) or ecdie(mysqli_error($con));
+$add_to_cart_result = mysqli_query($con, $add_to_cart_query) or die(mysqli_error($con));
 header("location: products.php?&type=$type");
 
 

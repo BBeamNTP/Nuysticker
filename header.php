@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="index.php"><img src="img/logo.jpg" align="left" width="50px" height="auto" border="0"
+            <a href="index.php"><img src="img/logo3.jpg" align="left" width="50px" height="auto" border="0"
                                      style="margin-right:20px"/></a>
             <a href="index.php" class="navbar-brand">Nuy Sticker Shop</a>
 

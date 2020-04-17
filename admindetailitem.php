@@ -4,8 +4,8 @@ require 'connection.php';
 if (!isset($_SESSION['email'])) {
     header('location: login.php');
 }
-$user_id = $_SESSION['id'];
-
+$user_id = $_GET['user_id'];
+$billing_id = $_GET['id'];
 $user_query = "select id, name, email, contact, city, address from users where id = '$user_id'";
 $user_result = mysqli_query($con, $user_query) or die(mysqli_error($con));
 $row = mysqli_fetch_array($user_result);
@@ -16,7 +16,6 @@ $user_contact = $row['contact']; //contact user
 $user_city = $row['city'];//city user
 $user_address = $row['address']; //address user
 
-$billing_id = $_GET['id'];
 $user_products_query = "select * from users_items ut inner join items it on it.id=ut.item_id where ut.user_id='$user_id' and ut.bill_id = '$billing_id'";
 $user_products_result = mysqli_query($con, $user_products_query) or die(mysqli_error($con));
 $no_of_user_products = mysqli_num_rows($user_products_result);
@@ -74,19 +73,16 @@ if ($no_of_user_products == 0) {
             height: auto;
             /*border: solid 5px #000;*/
             /*border-radius: 5px;*/
-            /*margin-top: 30px;*/
+            /*margin-top: 5px;*/
         }
-
     </style>
 </head>
 <body>
 <div>
     <?php
-    require 'header.php';
-
+    require 'headeradmin.php';
     ?>
     <br>
-
     <div class="container" align="center">
         <form action="updateuser.php?id=<?php echo $billing_id ?>" method="post">
             <br><br>
@@ -96,7 +92,6 @@ if ($no_of_user_products == 0) {
                     <td>&nbsp;</td>
                     <td width="20">&nbsp;</td>
                     <td><h1>แก้ไขข้อมูล</h1></td>
-
                 </tr>
                 <tr>
                     <td width="173"><span class="card-text">ชื่อผู้ทำรายการ : </span></td>
@@ -139,12 +134,10 @@ if ($no_of_user_products == 0) {
             <br><br>
         </form>
     </div>
-
     <div class="container">
         <table class="table table-bordered table-striped">
             <tbody>
             <label><h4> บิลเลขที่ <?php echo $billing_id ?> รายการของคุณมีดังนี้ </h4></label>
-
             <tr>
                 <th>รายการที่</th>
                 <th>ชื่อรายการ</th>
@@ -157,7 +150,6 @@ if ($no_of_user_products == 0) {
             $no_of_user_products = mysqli_num_rows($user_products_result);
             $counter = 1;
             while ($row = mysqli_fetch_array($user_products_result)) {
-
                 ?>
                 <tr>
                     <th><?php echo $counter ?></th>
@@ -165,7 +157,6 @@ if ($no_of_user_products == 0) {
                     <th><?php echo $row['quantity'] ?></th>
                     <th><?php echo $row['price'] ?></th>
                     <th><?php echo $row['totalprice'] ?></th>
-
                 </tr>
                 <?php $counter = $counter + 1;
             } ?>
@@ -179,70 +170,92 @@ if ($no_of_user_products == 0) {
             </tbody>
         </table>
     </div>
-
     <script>
         function showtxt() {
             var fartxt = document.getElementById('fileToUpload').value;
             document.getElementById('showtext').innerHTML = fartxt;
         }
     </script>
-
-    <div class="container">
-        <center>
-            <br><br>
-            <h1><b>แจ้งชำระสินค้าที่นี่</b></h1>
-            <br>
-            <img src="img/142845.jpg" width="450px" height="auto">
-            <br><br><br><br>
-
-        </center>
-    </div>
-
-
-    <table width="771" border="0" align="center">
+    <?php
+    $user_id = $_SESSION['id'];
+    $billing_id = $_GET['id'];
+    $user_products_query = "select * from billing bl inner join payment pm on pm.bill_id=bl.id where bl.id='$billing_id'";
+    $user_products_result = mysqli_query($con, $user_products_query) or die(mysqli_error($con));
+    $row = mysqli_fetch_array($user_products_result);
+    $status = $row['status'];
+    ?>
+    <table width="1226" border="0" align="center">
         <tr>
-            <td width="509" rowspan="3">
+            <td width="62" rowspan="3">&nbsp;</td>
+            <td width="515" rowspan="3">
                 <div>
-                    <div style="height: auto; width: 500px">
-                        <form action="paymentsuccess.php?id=<?php echo $billing_id; ?>" method="post"
+                    <div style="height: 500px; width: 500px">
+                        <h1><b>ตรวจสอบการชำระเงิน</b></h1>
+                        <form action="updatedetailpay.php?id=<?php echo $billing_id ?>" method="post"
                               enctype="multipart/form-data">
-
-                            <div class="fileinputs">
-                                <input type="file" class="file" name="fileToUpload" id="fileToUpload" accept="image/*"
-                                       onchange="showtxt()"/>
-                                <div class="fakefile">
-                                    <input type="button" value="ค้นหาไฟล์" required="true"/>
-                                    <span id="showtext"> เลือกรูปใบเสร็จชำระเงิน</span></div>
+                            <h4><p> ผู้สั่งซื้อ : <?php echo $row['user_id']; ?></p></h4>
+                            <h4><p> หมายเลขคำสั่งซื้อ : <?php echo $row['bill_id']; ?></p></h4>
+                            <h4><p> จำนวนเงินที่ต้องชำระ : <?php echo $row['amount']; ?></p></h4>
+                            <p>&nbsp; </p>
+                            <div class="form-check">
+                                <h4><p>สถานะ :&nbsp; </p></h4>
+                                <p>
+                                    <input type="radio"
+                                           name="status" <?php if (isset($status) && $status == "Not_paid") echo "checked"; ?>
+                                           value="Not_paid" checked>
+                                    ยังไม่ได้ชำระเงิน
+                                    &nbsp; </p>
+                                <p>
+                                    <input type="radio"
+                                           name="status" <?php if (isset($status) && $status == "Paid") echo "checked"; ?>
+                                           value="Paid">
+                                    ชำระเงินแล้ว
+                                    &nbsp; </p>
+                                <p>
+                                    <input type="radio"
+                                           name="status" <?php if (isset($status) && $status == "Wait") echo "checked"; ?>
+                                           value="Wait">
+                                    รอการตรวจสอบ
+                                    &nbsp; </p>
+                                <p>
+                                    <input type="radio"
+                                           name="status" <?php if (isset($status) && $status == "Fail") echo "checked"; ?>
+                                           value="Fail">
+                                    การชำระเงินผิดพลาด
+                                    &nbsp;</p>
                             </div>
                             <br>
-                            <script>
-                                var filename = document.getElementById('fileToUpload');
-                                filename.onchange = function () {
-                                    var files = filename.files[0];
-                                    var reader = new FileReader();
-                                    reader.readAsDataURL(files);
-                                    reader.onload = function () {
-                                        var result = reader.result;
-                                        document.getElementById('showImage').src = result;
-                                    };
-                                };
 
-                            </script>
-                            <br>
                             <div class="form-group">
-                                <input type="submit" class="btn btn-primary" value="ยืนยันการแจ้งชำระ"
-                                       onclick="chkConfirm()">
+
+                                <input type="submit" class="btn btn-primary" value="ยืนยัน">
                             </div>
                         </form>
                     </div>
                 </div>
             </td>
-
+            <td width="95">&nbsp;</td>
+            <td width="415" height="104">&nbsp;</td>
+            <td width="117" rowspan="3">&nbsp;</td>
         </tr>
         <tr>
-            <td width="233" height="260">
-                <img align="right" id="showImage" class="rounded-circle" alt="Cinque Terre" width="300px" height="auto">
+            <td>&nbsp;</td>
+            <td height="302" class="text-center">
+                <h1> สลิปการชำระเงินจากลูกค้า </h1>
+                <?php
+                echo $images = $row['image'];
+                if (($images == "") && ($images == null)) { ?>
+                    <h3><b>ยังไม่มีสลิกชำระเงินจากลูกค้า</b></h3>
+                <?php } else { ?>
+                    <img style="width: 400px" src="<?php echo $row['image']; ?>" align="right" id="showImage"
+                         class="rounded-circle"
+                         alt="Cinque Terre" width="auto" height="400">
+                <?php } ?>
             </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
         </tr>
     </table>
     <br><br><br><br><br><br>
