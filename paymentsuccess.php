@@ -41,71 +41,115 @@ $date2 = thai_date_fullmonth(time());
 
 $path = 'payment-' . $user_id . "-" . (string)$bill_id . "-" . $date . ".jpg";
 $target_dir = "img/payment/" . $bill_id . "/"; //ที่อยู่ ของไฟล์ที่เก็บ รูป
-$target_file = $target_dir . $path;  //เปลียรนชื่อไฟล์ใหม่
+//$target_file = $target_dir . $path;  //เปลียรนชื่อไฟล์ใหม่
+//
+////$flgCreate = mkdir("$target_dir");
+//if (!@mkdir($target_dir, 0, true)) {
+////        echo "Folder Created.";
+//} else {
+////    echo "Folder Not Create.";
+//}
+//
+//$uploadOk = 1;
+//$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+//// Check if image file is a actual image or fake image
+//if (isset($_POST["submit"])) {
+//    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+//    if ($check !== false) {
+////        echo "File is an image - " . $check["mime"] . ".";
+//        $uploadOk = 1;
+//    } else {
+////        echo "File is not an image.";
+//        $uploadOk = 0;
+//    }
+//}
+//// Check if file already exists
+//$n = 1;
+//if (file_exists($target_file)) {
+//    $path = 'payment-' . $user_id . "-" . (string)$bill_id . "-" . $date . ".jpg";
+//    $target_file = $target_dir . $path;  //เปลียรนชื่อไฟล์ใหม่
+//    $n = $n + 1;
+//} else {
+//
+//}
+//// Check file size
+//if ($_FILES["fileToUpload"]["size"] > 50000000) {
+////    echo "Sorry, your file is too large.";
+//    $uploadOk = 0;
+//}
+//// Allow certain file formats
+//if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+//    && $imageFileType != "gif") {
+//    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+//    $uploadOk = 0;
+//}
+//// Check if $uploadOk is set to 0 by an error
+//if ($uploadOk == 0) {
+////    echo "Sorry, your file was not uploaded.";
+//// if everything is ok, try to upload file
+//} else {
+//    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+////        echo " path : " . $target_file;
+//
+//        $add_payment_query = "insert into payment(user_id,bill_id,image, time) values ('$user_id','$bill_id','$target_file', '$date2')";
+//        $add_payment_result = mysqli_query($con, $add_payment_query) or die(mysqli_error($con));
+//        $billing_update_query = "UPDATE `billing` SET `status`='Wait' WHERE id = '$bill_id' ";
+//        $billing_update_result = mysqli_query($con, $billing_update_query) or die(mysqli_error($con));
+//        mysqli_close($con);
+//        basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
+//
+//        ?>
+<!--        <script>-->
+<!--            window.alert('แจ้งชำระสินค้าเรียบร้อย กรุณารอผลการตรวจสอบ ภายใน 24 ชม.');-->
+<!--            window.location.href = 'billing.php';-->
+<!--        </script>-->
+<!--        --><?php
+//        exit();
+//    } else {
+//        echo "Sorry, there was an error uploading your file.";
+//    }
+//}
 
-//$flgCreate = mkdir("$target_dir");
-if (!@mkdir($target_dir, 0, true)) {
-//        echo "Folder Created.";
-} else {
-//    echo "Folder Not Create.";
-}
 
-$uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-// Check if image file is a actual image or fake image
-if (isset($_POST["submit"])) {
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    if ($check !== false) {
-//        echo "File is an image - " . $check["mime"] . ".";
-        $uploadOk = 1;
-    } else {
-//        echo "File is not an image.";
-        $uploadOk = 0;
-    }
-}
-// Check if file already exists
-$n = 1;
-if (file_exists($target_file)) {
-    $path = 'payment-' . $user_id . "-" . (string)$bill_id . "-" . $date . ".jpg";
-    $target_file = $target_dir . $path;  //เปลียรนชื่อไฟล์ใหม่
-    $n = $n + 1;
-} else {
+$fileupload = $_FILES['fileToUpload'];
+// วนลูปทีละรายการ
+foreach ($fileupload['tmp_name'] as $i => $tmp_name) {
+    // ตรวจสอบว่ามีไฟล์ส่งมาหรือไม่
+    if ($tmp_name != '') {
+        // แสดงผลค่าที่ส่งมา
+        echo $fileupload['name'][$i] . '<br>';
+        echo $tmp_name . '<br>';
+        echo $fileupload['type'][$i] . '<br>';
+        if ($fileupload['type'][$i] != "image/jpg" && $fileupload['type'][$i] != "image/png" && $fileupload['type'][$i] != "image/jpeg"
+            && $fileupload['type'][$i] != "image/gif") {
+            echo " Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        }
+        //        echo $fileupload['type'][$i].'<br>';
+        if ($fileupload['size'][$i] > 5000000) {
+            echo " ขนาดรูปใหญ่เกินไป";
+        }
+        //        echo $fileupload['size'][$i].'<br>';
 
-}
-// Check file size
-if ($_FILES["fileToUpload"]["size"] > 50000000) {
-//    echo "Sorry, your file is too large.";
-    $uploadOk = 0;
-}
-// Allow certain file formats
-if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-    && $imageFileType != "gif") {
-    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-    $uploadOk = 0;
-}
-// Check if $uploadOk is set to 0 by an error
-if ($uploadOk == 0) {
-//    echo "Sorry, your file was not uploaded.";
-// if everything is ok, try to upload file
-} else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-//        echo " path : " . $target_file;
+        // สำเนาไฟล์ไปยังปลายทาง
+
+        if (!@mkdir($target_dir, 0, true)) { // เช็คว่ามีไฟล์หรือยัง
+            //        echo "Folder Created.";
+        }
+        copy($tmp_name, $target_dir . $fileupload['name'][$i]);
+        $avatar_path = $target_dir . $fileupload['name'][$i];
 
         $add_payment_query = "insert into payment(user_id,bill_id,image, time) values ('$user_id','$bill_id','$target_file', '$date2')";
         $add_payment_result = mysqli_query($con, $add_payment_query) or die(mysqli_error($con));
         $billing_update_query = "UPDATE `billing` SET `status`='Wait' WHERE id = '$bill_id' ";
         $billing_update_result = mysqli_query($con, $billing_update_query) or die(mysqli_error($con));
         mysqli_close($con);
-        basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
-
         ?>
         <script>
             window.alert('แจ้งชำระสินค้าเรียบร้อย กรุณารอผลการตรวจสอบ ภายใน 24 ชม.');
             window.location.href = 'billing.php';
         </script>
-        <?php
-        exit();
-    } else {
+<?php
+    }else {
         echo "Sorry, there was an error uploading your file.";
     }
 }
