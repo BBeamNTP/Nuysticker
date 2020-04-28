@@ -38,8 +38,14 @@ function thai_date_fullmonth($time)
 $date = thai_date_short_number(time());
 $date2 = thai_date_fullmonth(time());
 
-$path = 'payment-' . $user_id . "-" . (string)$bill_id . "-" . $date . ".jpg";
-$target_dir = "img/payment/". $bill_id."/"; //ที่อยู่ ของไฟล์ที่เก็บ รูป
+//$path = 'payment-' . $user_id . "-" . (string)$bill_id . "-" . $date . ".jpg";
+//$target_dir = "img/payment/". $bill_id."/"; //ที่อยู่ ของไฟล์ที่เก็บ รูป
+//$target_file = $target_dir . $path;  //เปลียรนชื่อไฟล์ใหม่
+
+echo " path : ".$path = $types.(string)$item_id.".jpg";
+
+$target_dir = "img/product/".$types."/";
+//$target_file = $target_dir . basename($_FILES.$path); //ชื่อไฟล์แบบเดิม
 $target_file = $target_dir . $path;  //เปลียรนชื่อไฟล์ใหม่
 
 
