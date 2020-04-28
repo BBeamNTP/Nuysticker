@@ -39,9 +39,9 @@ $date = thai_date_short_number(time());
 $date2 = thai_date_fullmonth(time());
 
 echo " path : ".$path = (string)$bill_id.".jpg";
-$target_dir = "img/product/".$bill_id."/";
-//$target_file = $target_dir . basename($_FILES.$path); //ชื่อไฟล์แบบเดิม
-$target_file = $target_dir . $path;  //เปลียรนชื่อไฟล์ใหม่
+$target_dir = "img/payment/".(string)$bill_id."/";
+$target_file = $target_dir . basename($_FILES.$path); //ชื่อไฟล์แบบเดิม
+//$target_file = $target_dir . $path;  //เปลียรนชื่อไฟล์ใหม่
 
 if(!@mkdir($target_dir,0,true)){ // เช็คว่ามีไฟล์หรือยัง
 //        echo "Folder Created.";
@@ -91,9 +91,11 @@ if ($uploadOk == 0) {
 
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "Pass UPLOAD ";
-//        $add_items_query = "insert into items(id, types, name, price, image) values ('$item_id','$types','$name', '$price','$target_file')";
-//        $add_items_result = mysqli_query($con, $add_items_query) or die(mysqli_error($con));
-        mysqli_close($con);
+       $add_payment_query = "insert into payment(user_id,bill_id,image, time) values ('$user_id','$bill_id','$target_file', '$date2')";
+        $add_payment_result = mysqli_query($con, $add_payment_query) or die(mysqli_error($con));
+        $billing_update_query = "UPDATE `billing` SET `status`='Wait' WHERE id = '$bill_id' ";
+        $billing_update_result = mysqli_query($con, $billing_update_query) or die(mysqli_error($con));
+////        mysqli_close($con);
 //        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
         ?>
         <script type="text/javascript">
