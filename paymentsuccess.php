@@ -38,78 +38,65 @@ function thai_date_fullmonth($time)
 $date = thai_date_short_number(time());
 $date2 = thai_date_fullmonth(time());
 
-echo " path : ".$path = (string)$bill_id.".jpg";
-$target_dir = "img/payment/".(string)$bill_id."/";
-$target_file = $target_dir . basename($_FILES.$path); //ชื่อไฟล์แบบเดิม
-//$target_file = $target_dir . $path;  //เปลียรนชื่อไฟล์ใหม่
 
-if(!@mkdir($target_dir,0,true)){ // เช็คว่ามีไฟล์หรือยัง
-//        echo "Folder Created.";
-}
-else
-{
-    echo "Folder Not Create.";
-}
-
+$target_dir = "img/payment/$bill_id/";
+echo $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 // Check if image file is a actual image or fake image
-if(isset($_POST["submit"])) {
+if (isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
+    if ($check !== false) {
+        echo " File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
     } else {
-        echo "File is not an image.";
+        echo " File is not an image.";
         $uploadOk = 0;
     }
 }
+if (!@mkdir($target_dir, 0, true)) { // เช็คว่ามีไฟล์หรือยัง
+//        echo "Folder Created.";
+}
 
 // Check if file already exists
-if (file_exists($target_file)) {
-    echo "Sorry, file already exists.";
-    $uploadOk = 0;
+if (file_exists($target_file)) {  //ถ้ามีไฟล์เดิมอยู่จะลบแล้วอัฟใหม่
+//    echo "Sorry, file already exists.";
+    @unlink("$target_file"); //คำสั่งลบ
+//    $uploadOk = 0;
 }
+
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 50000000) {
-    echo "Sorry, your file is too large.";
+    echo " Sorry, your file is too large.";
     $uploadOk = 0;
 }
 
 // Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-    && $imageFileType != "gif" ) {
-    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+    && $imageFileType != "gif") {
+    echo " Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+
     $uploadOk = 0;
 }
-
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
+    $path = "img/1.png";
+    echo " Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
-
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        echo "Pass UPLOAD ";
-       $add_payment_query = "insert into payment(user_id,bill_id,image, time) values ('$user_id','$bill_id','$target_file', '$date2')";
+//            echo " The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
+        $path = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+        $add_payment_query = "insert into payment(user_id,bill_id,image, time) values ('$user_id','$bill_id','$target_file', '$date2')";
         $add_payment_result = mysqli_query($con, $add_payment_query) or die(mysqli_error($con));
         $billing_update_query = "UPDATE `billing` SET `status`='Wait' WHERE id = '$bill_id' ";
         $billing_update_result = mysqli_query($con, $billing_update_query) or die(mysqli_error($con));
-////        mysqli_close($con);
-//        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-        ?>
-        <script type="text/javascript">
-            alert("สร้างรายการสินค้าเรียบร้อยแล้ว")
-            window.location.href = 'adminaddproduct.php';
-        </script>
-
-        <?php
-        exit();
+        mysqli_close($con);
+       echo basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
     } else {
-        echo "Sorry, there was an error uploading your file.";
+        echo " Sorry, there was an error uploading your file.";
     }
 }
-
 
 //
 //if(!@mkdir($target_dir,0,true)){ // เช็คว่ามีไฟล์หรือยัง
