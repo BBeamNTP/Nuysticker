@@ -39,7 +39,7 @@ $date = thai_date_short_number(time());
 $date2 = thai_date_fullmonth(time());
 
 
-$target_dir = "img/payment/$bill_id/";
+$target_dir = "img/payment/";
 echo $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
