@@ -38,7 +38,8 @@ function thai_date_fullmonth($time)
 $date = thai_date_short_number(time());
 $date2 = thai_date_fullmonth(time());
 
-$target_dir = "img/product/".$types."/";
+echo " path : ".$path = (string)$bill_id.".jpg";
+$target_dir = "img/product/".$bill_id."/";
 //$target_file = $target_dir . basename($_FILES.$path); //ชื่อไฟล์แบบเดิม
 $target_file = $target_dir . $path;  //เปลียรนชื่อไฟล์ใหม่
 
