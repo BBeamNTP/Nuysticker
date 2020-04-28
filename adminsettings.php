@@ -1,12 +1,13 @@
 <?php
     session_start();
     require 'connection.php';
-if ((!isset($_SESSION['email']) && ($_SESSION['status'] != "Member")) ) {
+if ((!isset($_SESSION['email']) && ($_SESSION['status'] != "Admin")) ) {
     header('location: login.php');
 }
-if (($_SESSION['status'] != "Member")) {
-    header('location: adminindex.php');
+if (($_SESSION['status'] != "Admin")) {
+    header('location: index.php');
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,7 +24,7 @@ if (($_SESSION['status'] != "Member")) {
     <body>
         <div>
             <?php
-                require 'header.php';
+                require 'headeradmin.php';
             ?>
             <br>
             <div class="container">

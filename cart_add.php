@@ -14,6 +14,7 @@ printf("*-*-*--". $type. "\n") ;
 $sql = "SELECT * FROM items WHERE id = '$item_id';";
 $result = mysqli_query($con, $sql);
 
+
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
@@ -28,8 +29,8 @@ if (mysqli_num_rows($result) > 0) {
 echo "TotalPrice : " . $totalprice;
 
 
-$add_to_cart_query = "insert into users_items(user_id,item_id,status, quantity, totalprice) values ('$user_id','$item_id','Added to cart', $num1 , $totalprice)";
-$add_to_cart_result = mysqli_query($con, $add_to_cart_query) or ecdie(mysqli_error($con));
+$add_to_cart_query = "insert into users_items(user_id,item_id,status, quantity, totalprice) values ('$user_id','$item_id','Added to cart', '$num1' , '$totalprice')";
+$add_to_cart_result = mysqli_query($con, $add_to_cart_query) or die(mysqli_error($con));
 header("location: products.php?&type=$type");
 
 

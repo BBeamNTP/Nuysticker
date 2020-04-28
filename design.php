@@ -1,25 +1,24 @@
 <?php
 require 'connection.php';
 session_start();
-if (isset($_SESSION['email'])) {
-    header('location: products.php');
+if ((!isset($_SESSION['email']) && ($_SESSION['status'] != "Member")) ) {
+    header('location: login.php');
+}
+if (($_SESSION['status'] != "Member")) {
+    header('location: adminindex.php');
 }
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="shortcut icon" href="img/lifestyleStore.png"/>
+    <link rel="shortcut icon" href="img/logo3.jpg"/>
     <title>NuySticker Shop</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- latest compiled and minified CSS -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css">
-    <!-- jquery library -->
     <script type="text/javascript" src="bootstrap/js/jquery-3.2.1.min.js"></script>
-    <!-- Latest compiled and minified javascript -->
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-    <!-- External CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <style>
         div.fileinputs {
@@ -48,8 +47,8 @@ if (isset($_SESSION['email'])) {
 
         #showImage[src] {
             display: block;
-            height: 400px;
-            border: solid 5px #000;
+            height: 450px;
+            border: solid 2px #000;
             border-radius: 5px;
             margin-top: 30px;
         }
@@ -69,26 +68,23 @@ if (isset($_SESSION['email'])) {
     ?>
     <table width="1227" border="0" align="center">
         <tr>
-            <td width="113" rowspan="3">&nbsp;</td>
-            <td width="561" rowspan="3">
+            <td width="109" rowspan="3">&nbsp;</td>
+            <td width="565" rowspan="3">
                 <div>
                     <div style="height: 500px; width: 560px">
                         <h1><b>สั่งทำสติกเกอร์</b></h1>
                         <form action="detail.php" method="post" enctype="multipart/form-data">
-                            <!--                            <div class="form-group">-->
-                            <!--                                <input type="text" class="form-control" name="name" id="name" placeholder="ชื่อสินค้า" required>-->
-                            <!--                            </div>-->
-
 
                             <div class="form-group">
                                 <label for="comment">ขนาดสติกเกอร์ / 1 รูป :</label>
-                                <input type="number" class="form-control" name="price" id="wide"
+                                <input type="number" class="form-control" name="width" id="width"
                                        placeholder="ขนาดความกว้าง / เซนติเมตร" required pattern=""
-                                       onkeyup="myFunction()">
+                                       onkeyup="myFunction() " required>
                             </div>
                             <div class="form-group">
-                                <input type="number" class="form-control" name="price" id="hight"
-                                       placeholder="ขนาดความยาว / เซนติเมตร" required pattern="" onkeyup="myFunction()">
+                                <input type="number" class="form-control" name="length" id="length"
+                                       placeholder="ขนาดความยาว / เซนติเมตร" required pattern="" onkeyup="myFunction()"
+                                       required>
                             </div>
 
 
@@ -96,39 +92,6 @@ if (isset($_SESSION['email'])) {
                             <p id="demo2" hidden></p>
                             <p id="demo3" hidden></p>
                             <p id="demo4"></p>
-
-                            <script>
-                                function myFunction() {
-                                    var wide = document.getElementById("wide").value;
-                                    var hight = document.getElementById("hight").value;
-                                    var meter = document.getElementById("meter").value;
-
-                                    var total = wide * hight;
-                                    var sum = 1000 / total;
-                                    var total2 = meter * sum;
-                                    document.getElementById("demo1").innerHTML = wide;
-                                    document.getElementById("demo2").innerHTML = hight;
-                                    document.getElementById("demo3").innerHTML = total;
-                                    document.getElementById("demo4").innerHTML = "จำนวนรูปที่ได้ / 1 ตารางเมตรคือ : " + sum + " รูป";
-                                    document.getElementById("demo5").innerHTML = meter;
-                                    document.getElementById("demo6").innerHTML = "จำนวนรูปที่ได้ทั้งหมด โดยประมาณคือ : " + total2 + " รูป";
-
-                                }
-                            </script>
-
-
-                            <div class="form-check"><b> ประเภทสติกเกอร์ : </b>&nbsp;
-                                <input type="radio"
-                                       name="types" <?php if (isset($types) && $types == "female") echo "checked"; ?>
-                                       value="Letter" checked>
-                                สะท้อนแสง 1000 บาท / 1 เมตร
-                                &nbsp;
-                                <input type="radio"
-                                       name="types" <?php if (isset($types) && $types == "male") echo "checked"; ?>
-                                       value="Picture">
-                                ไม่สะท้อนแสง 800 บาท / 1 เมตร
-                            </div>
-                            <br>
                             <div class="form-group">
                                 <label for="comment">จำนวนตารางเมตร:</label>
                                 <input type="number" class="form-control" name="meter" id="meter"
@@ -137,21 +100,69 @@ if (isset($_SESSION['email'])) {
                             </div>
                             <p id="demo5" hidden></p>
                             <p id="demo6"></p>
+                            <br>
+                            <script>
+                                function myFunction(x) {
+                                    var width = document.getElementById("width").value;
+                                    var length = document.getElementById("length").value;
+                                    var meter = document.getElementById("meter").value;
 
+                                    var total = width * length;
+                                    var sum = 1000 / total;
+                                    var total2 = meter * sum;
+                                    document.getElementById("demo1").innerHTML = width;
+                                    document.getElementById("demo2").innerHTML = length;
+                                    document.getElementById("demo3").innerHTML = total;
+                                    document.getElementById("demo4").innerHTML = "จำนวนรูปที่ได้ / 1 ตารางเมตรคือ : " + sum + " รูป";
+                                    document.getElementById("demo5").innerHTML = meter;
+                                    document.getElementById("demo6").innerHTML = "จำนวนรูปที่ได้ทั้งหมด โดยประมาณคือ : " + total2 + " รูป";
+                                    var total3 = x.value * meter
+                                    document.getElementById("demo7").innerHTML = "จำนวนเงินที่ต้องชำระ : " + total3 + " บาท";
+
+                                }
+
+                                function validateForm() {
+                                    var radios = document.getElementsByName("price");
+                                    var formValid = false;
+
+                                    var i = 0;
+                                    while (!formValid && i < radios.length) {
+                                        if (radios[i].checked) formValid = true;
+                                        i++;
+                                    }
+
+                                    // if (!formValid) alert("Must check some option!");
+                                    return formValid;
+                                }
+                            </script>
+
+
+                            <div class="form-check"><b> ประเภทสติกเกอร์ : </b>&nbsp;
+                                <input type="radio" id="price1"
+                                       name="price" <?php if (isset($types) && $types == "female") echo "checked"; ?>
+                                       value="1000" onclick="myFunction(this), validateForm()" required>
+                                สะท้อนแสง 1000 บาท / 1 เมตร
+                                &nbsp;
+                                <input type="radio" id="price2"
+                                       name="price" <?php if (isset($types) && $types == "male") echo "checked"; ?>
+                                       value="800" onclick="myFunction(this), validateForm()" required>
+                                ไม่สะท้อนแสง 800 บาท / 1 เมตร
+                            </div>
+                            <br>
+                            <p id="demo7"></p>
                             <br>
                             <div class="form-group">
                                 <label for="comment">รายละเอียดเพิ่มเติม:</label>
-                                <textarea class="form-control" rows="5" id="comment"></textarea>
+                                <textarea class="form-control" rows="3" id="comment" name="comment"></textarea>
                             </div>
 
                             <div class="fileinputs">
-                                <input type="file" class="file" name="fileToUpload" id="fileToUpload"
+                                <input type="file" class="file" name="fileToUpload" id="fileToUpload" accept="image/*"
                                        onchange="showtxt()"/>
                                 <div class="fakefile">
                                     <input type="button" value="ค้นหาไฟล์"/>
                                     <span id="showtext"> ที่อยู่ไฟล์ </span></div>
                             </div>
-                            <br>
                             <br>
                             <script>
                                 var filename = document.getElementById('fileToUpload');
@@ -165,7 +176,6 @@ if (isset($_SESSION['email'])) {
                                     };
                                 };
                             </script>
-                            <br>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary" value="ถัดไป">
                             </div>
@@ -173,13 +183,13 @@ if (isset($_SESSION['email'])) {
                     </div>
                 </div>
             </td>
-            <td width="34">&nbsp;</td>
-            <td width="463" height="73">&nbsp;</td>
-            <td width="34" rowspan="3">&nbsp;</td>
+            <td width="19">&nbsp;</td>
+            <td width="499" height="73">&nbsp;</td>
+            <td width="13" rowspan="3">&nbsp;</td>
         </tr>
         <tr>
             <td>&nbsp;</td>
-            <td height="401">
+            <td height="452">
                 <img align="right" id="showImage" class="rounded-circle" alt="Cinque Terre" width="auto" height="auto">
             </td>
         </tr>
@@ -188,7 +198,7 @@ if (isset($_SESSION['email'])) {
             <td>&nbsp;</td>
         </tr>
     </table>
-    <br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
     <footer class="footer">
         <div class="container">
             <center>
