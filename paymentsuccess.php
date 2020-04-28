@@ -38,16 +38,9 @@ function thai_date_fullmonth($time)
 $date = thai_date_short_number(time());
 $date2 = thai_date_fullmonth(time());
 
-//$path = 'payment-' . $user_id . "-" . (string)$bill_id . "-" . $date . ".jpg";
-//$target_dir = "img/payment/". $bill_id."/"; //ที่อยู่ ของไฟล์ที่เก็บ รูป
-//$target_file = $target_dir . $path;  //เปลียรนชื่อไฟล์ใหม่
-
-echo " path : ".$path = $bill_id.".jpg";
-
-$target_dir = "img/pay/".$bill_id."/";
+$target_dir = "img/product/".$types."/";
 //$target_file = $target_dir . basename($_FILES.$path); //ชื่อไฟล์แบบเดิม
 $target_file = $target_dir . $path;  //เปลียรนชื่อไฟล์ใหม่
-
 
 if(!@mkdir($target_dir,0,true)){ // เช็คว่ามีไฟล์หรือยัง
 //        echo "Folder Created.";
@@ -94,28 +87,26 @@ if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
- echo "pass to else 1 ";
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        echo "pass to else 2 ";
-//
-//        $add_payment_query = "insert into payment(user_id,bill_id,image, time) values ('$user_id','$bill_id','$target_file', '$date2')";
-//        $add_payment_result = mysqli_query($con, $add_payment_query) or die(mysqli_error($con));
-//        $billing_update_query = "UPDATE `billing` SET `status`='Wait' WHERE id = '$bill_id' ";
-//        $billing_update_result = mysqli_query($con, $billing_update_query) or die(mysqli_error($con));
-//        mysqli_close($con);
 
-//
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+        echo "Pass UPLOAD ";
+//        $add_items_query = "insert into items(id, types, name, price, image) values ('$item_id','$types','$name', '$price','$target_file')";
+//        $add_items_result = mysqli_query($con, $add_items_query) or die(mysqli_error($con));
+        mysqli_close($con);
+//        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
         ?>
-        <script>
-            window.alert('แจ้งชำระสินค้าเรียบร้อย กรุณารอผลการตรวจสอบ ภายใน 24 ชม.');
-            window.location.href = 'billing.php';
+        <script type="text/javascript">
+            alert("สร้างรายการสินค้าเรียบร้อยแล้ว")
+            window.location.href = 'adminaddproduct.php';
         </script>
+
         <?php
         exit();
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
 }
+
 
 //
 //if(!@mkdir($target_dir,0,true)){ // เช็คว่ามีไฟล์หรือยัง
