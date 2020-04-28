@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f5e22d20-ef0a-4c41-8dd1-d02b0a80bdd0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/check_if_added.php" beforeDir="false" afterPath="$PROJECT_DIR$/check_if_added.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/connection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paymentsuccess.php" beforeDir="false" afterPath="$PROJECT_DIR$/paymentsuccess.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,11 +177,11 @@
     <state x="-1053" y="284" key="com.intellij.ide.util.TipDialog/-1600.0.1600.860/0.0.1920.1040@-1600.0.1600.860" timestamp="1587802456193" />
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1587705140041" />
     <state x="547" y="284" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1040@0.0.1600.860" timestamp="1585289763547" />
-    <state x="-1600" y="0" width="1600" height="860" key="find.popup" timestamp="1588097891072">
-      <screen x="-1600" y="0" width="1600" height="860" />
+    <state x="0" y="0" width="1920" height="1040" key="find.popup" timestamp="1588105290584">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1600" y="0" width="1600" height="860" key="find.popup/-1600.0.1600.860/0.0.1920.1040@-1600.0.1600.860" timestamp="1588097891072" />
-    <state x="0" y="0" width="1920" height="1040" key="find.popup/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1588086262920" />
+    <state x="0" y="0" width="1920" height="1040" key="find.popup/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1588105290584" />
     <state x="-1315" y="101" key="new project wizard" timestamp="1587539224841">
       <screen x="-1600" y="0" width="1600" height="860" />
     </state>
