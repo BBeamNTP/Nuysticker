@@ -3,21 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f5e22d20-ef0a-4c41-8dd1-d02b0a80bdd0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/Picture32.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/payment/2/payment-7-2-17-04-63.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/payment/3/payment-7-3-17-04-63.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/payment/4/payment-7-4-23-04-63.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/product/Custom/7_31Design01/Design0131.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/product/Custom/7_32Design01/Design0132.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/product/Custom/7_33Design01/Design0133.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/product/Custom/7_34Design01/Design0134.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/product/Custom/7_35Design01/Design0135.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/product/Custom/7_36Design01/Design0136.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/product/Custom/7_37Design01/Design0137.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/product/Letter/Letter38.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/product/Letter/Letter39.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/product/Letter/Letter40.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/paymentsuccess.php" beforeDir="false" afterPath="$PROJECT_DIR$/paymentsuccess.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/check_if_added.php" beforeDir="false" afterPath="$PROJECT_DIR$/check_if_added.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/connection.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
