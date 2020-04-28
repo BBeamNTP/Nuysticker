@@ -28,7 +28,10 @@ session_destroy();
                     <div class="panel-heading"></div>
                     <div class="panel-body">
                         <p>You have been logged out. <a href="login.php">Login again.</a></p>
-                        <?php header('location: index.php'); ?>
+<!--                        --><?php //header('location: index.php'); ?>
+                        <script>
+                            window.location.href = 'index.php';
+                        </script>
                     </div>
                 </div>
             </div>

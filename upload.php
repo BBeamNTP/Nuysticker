@@ -73,9 +73,14 @@ if ($uploadOk == 0) {
         $add_items_query = "insert into items(id, types, name, price, image) values ('$item_id','$types','$name', '$price','$target_file')";
         $add_items_result = mysqli_query($con, $add_items_query) or die(mysqli_error($con));
         mysqli_close($con);
-        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-        function_alert("สร้างรายการสินค้าเรียบร้อยแล้ว");
-        echo "<meta http-equiv='refresh' content='0;url=addproduct.php'>";
+//        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+    ?>
+        <script type="text/javascript">
+            alert("สร้างรายการสินค้าเรียบร้อยแล้ว")
+            window.location.href = 'adminaddproduct.php';
+        </script>
+
+<?php
         exit();
     } else {
         echo "Sorry, there was an error uploading your file.";

@@ -6,8 +6,8 @@
                            <span class="icon-bar"></span>
                            <span class="icon-bar"></span>
                        </button>
-                       <a href="admin.php"><img src="img/logo3.jpg" align="left" width="50px" height="auto" border="0" style="margin-right:20px"/></a>
-                       <a href="admin.php" class="navbar-brand">Nuy Sticker Shop</a>
+                       <a href="adminindex.php"><img src="img/logo3.jpg" align="left" width="50px" height="auto" border="0" style="margin-right:20px"/></a>
+                       <a href="adminindex.php" class="navbar-brand">Nuy Sticker Shop</a>
                    </div>
 
                    <div class="collapse navbar-collapse" id="myNavbar">
@@ -15,9 +15,9 @@
                            <?php
                            if(isset($_SESSION['email'])){
                            ?>
-                           <li><a href="addproduct.php"><span class="glyphicon glyphicon-plus"></span> เพิ่มรายการสินค้า </a></li>
+                           <li><a href="adminaddproduct.php"><span class="glyphicon glyphicon-plus"></span> เพิ่มรายการสินค้า </a></li>
                            <li><a href="adminbilling.php"><span class="glyphicon glyphicon-shopping-cart"></span> การชำระเงิน </a></li>
-                           <li><a href="settingsadmin.php"><span class="glyphicon glyphicon-cog"></span> ตั่งค่า </a></li>
+                           <li><a href="adminsettings.php"><span class="glyphicon glyphicon-cog"></span> ตั่งค่า </a></li>
                            <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> ออกจากระบบ </a></li>
                            <?php
                            }else{

@@ -41,7 +41,7 @@ if ($rows_fetched == 0) {
     $_SESSION['city'] = $row['city']; //city user
     $_SESSION['address'] = $row['address']; //address user
     if ($_SESSION['status'] == "Admin") { //ถ้าเป็น admin ให้กระโดดไปหน้า admin_page.php
-        header('location: admin.php');
+        header('location: adminindex.php');
     }
 
     if ($_SESSION['status'] == "Member") {  //ถ้าเป็น member ให้กระโดดไปหน้า user_page.php

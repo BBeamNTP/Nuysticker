@@ -4,7 +4,7 @@ if ((!isset($_SESSION['email']) && ($_SESSION['status'] != "Member")) ) {
     header('location: login.php');
 }
 if (($_SESSION['status'] != "Member")) {
-    header('location: admin.php');
+    header('location: adminindex.php');
 }
 $aDoor = $_POST['formDoor'];
 if(empty($aDoor))

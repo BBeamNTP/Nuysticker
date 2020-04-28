@@ -2,8 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5e22d20-ef0a-4c41-8dd1-d02b0a80bdd0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/img/payment/1/payment-7-1-17-04-63.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/payment/4/payment-7-4-23-04-63.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Letter/Letter38.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Letter/Letter39.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addproduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminaddproduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminindex.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminquery.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminquery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billing.php" beforeDir="false" afterPath="$PROJECT_DIR$/billing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/check_if_added.php" beforeDir="false" afterPath="$PROJECT_DIR$/check_if_added.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deleteproduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/deleteproduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/design.php" beforeDir="false" afterPath="$PROJECT_DIR$/design.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/detailbilling.php" beforeDir="false" afterPath="$PROJECT_DIR$/detailbilling.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/headeradmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/headeradmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/product/Custom/7_31Design01/Design0131.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/product/Custom/7_32Design01/Design0132.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/product/Custom/7_33Design01/Design0133.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/product/Custom/7_34Design01/Design0134.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/product/Custom/7_35Design01/Design0135.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/รายการที่ต้องทำ.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login_submit.php" beforeDir="false" afterPath="$PROJECT_DIR$/login_submit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/settings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settingsadmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminsettings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/upload.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +136,23 @@
       <workItem from="1586439042731" duration="685000" />
       <workItem from="1587029799864" duration="33546000" />
       <workItem from="1587105695620" duration="584000" />
+      <workItem from="1587129887190" duration="601000" />
+      <workItem from="1587529451590" duration="365000" />
+      <workItem from="1587536652747" duration="667000" />
+      <workItem from="1587538917854" duration="324000" />
+      <workItem from="1587542777609" duration="1686000" />
+      <workItem from="1587546886989" duration="11859000" />
+      <workItem from="1587612639945" duration="9537000" />
+      <workItem from="1587646628601" duration="2548000" />
+      <workItem from="1587657325947" duration="1346000" />
+      <workItem from="1587705139130" duration="10000" />
+      <workItem from="1587709363266" duration="1222000" />
+      <workItem from="1587726801971" duration="5977000" />
+      <workItem from="1587802454501" duration="614000" />
+      <workItem from="1587831020826" duration="585000" />
+      <workItem from="1587893112261" duration="4931000" />
+      <workItem from="1588052247298" duration="36000" />
+      <workItem from="1588070302382" duration="7682000" />
     </task>
     <servers />
   </component>
@@ -137,10 +178,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1587072156701" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1585827195910">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1587802465766">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585827195910" />
+    <state x="-983" y="227" key="FileChooserDialogImpl/-1600.0.1600.860/0.0.1920.1040@-1600.0.1600.860" timestamp="1587539239677" />
+    <state x="740" y="275" key="FileChooserDialogImpl/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1587802465766" />
     <state x="794" y="443" key="NewPhpFileDialog" timestamp="1587042344836">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -153,18 +195,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585833028499" />
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1587029807578">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1053" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1587802456193">
+      <screen x="-1600" y="0" width="1600" height="860" />
     </state>
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1587029807578" />
+    <state x="-1053" y="284" key="com.intellij.ide.util.TipDialog/-1600.0.1600.860/0.0.1920.1040@-1600.0.1600.860" timestamp="1587802456193" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1587705140041" />
     <state x="547" y="284" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1040@0.0.1600.860" timestamp="1585289763547" />
-    <state x="0" y="0" width="1920" height="1040" key="find.popup" timestamp="1587075901630">
+    <state x="0" y="0" width="1920" height="1040" key="find.popup" timestamp="1588086262920">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="0" width="1920" height="1040" key="find.popup/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1587075901630" />
-    <state x="342" y="140" key="new project wizard" timestamp="1585826111378">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1600" y="0" width="1600" height="860" key="find.popup/-1600.0.1600.860/0.0.1920.1040@-1600.0.1600.860" timestamp="1588086204869" />
+    <state x="0" y="0" width="1920" height="1040" key="find.popup/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1588086262920" />
+    <state x="-1315" y="101" key="new project wizard" timestamp="1587539224841">
+      <screen x="-1600" y="0" width="1600" height="860" />
     </state>
+    <state x="-1315" y="101" key="new project wizard/-1600.0.1600.860/0.0.1920.1040@-1600.0.1600.860" timestamp="1587539224841" />
     <state x="342" y="140" key="new project wizard/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585826111378" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1587061721873">
       <screen x="0" y="0" width="1920" height="1040" />
