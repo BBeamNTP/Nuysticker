@@ -8,8 +8,10 @@ if (!isset($_SESSION['email'])) {
     header('location: login.php');
 }
 require 'connection.php';
-$user_id = $_SESSION['id'];
-$bill_id = $_GET['id'];
+echo $user_id = $_SESSION['id'];
+echo "<br>";
+echo $bill_id = $_GET['id'];
+echo "<br>";
 
 $dayTH = ['อาทิตย์', 'จันทร์', 'อังคาร', 'พุธ', 'พฤหัสบดี', 'ศุกร์', 'เสาร์'];
 $monthTH = [null, 'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม'];
@@ -89,17 +91,14 @@ if ($uploadOk == 0) {
  echo "pass to else 1 ";
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "pass to else 2 ";
-
-        $add_payment_query = "insert into payment(user_id,bill_id,image, time) values ('$user_id','$bill_id','$target_file', '$date2')";
-        $add_payment_result = mysqli_query($con, $add_payment_query) or die(mysqli_error($con));
-        $billing_update_query = "UPDATE `billing` SET `status`='Wait' WHERE id = '$bill_id' ";
-        $billing_update_result = mysqli_query($con, $billing_update_query) or die(mysqli_error($con));
-        mysqli_close($con);
-
-//        $add_items_query = "insert into items(id, types, name, price, image) values ('$item_id','$types','$name', '$price','$target_file')";
-//        $add_items_result = mysqli_query($con, $add_items_query) or die(mysqli_error($con));
+//
+//        $add_payment_query = "insert into payment(user_id,bill_id,image, time) values ('$user_id','$bill_id','$target_file', '$date2')";
+//        $add_payment_result = mysqli_query($con, $add_payment_query) or die(mysqli_error($con));
+//        $billing_update_query = "UPDATE `billing` SET `status`='Wait' WHERE id = '$bill_id' ";
+//        $billing_update_result = mysqli_query($con, $billing_update_query) or die(mysqli_error($con));
 //        mysqli_close($con);
-//        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+
+//
         ?>
         <script>
             window.alert('แจ้งชำระสินค้าเรียบร้อย กรุณารอผลการตรวจสอบ ภายใน 24 ชม.');
