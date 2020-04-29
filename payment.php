@@ -1,12 +1,12 @@
 <?php
 session_start();
 require 'connection.php';
-if ((!isset($_SESSION['email']) && ($_SESSION['status'] != "Member")) ) {
-    header('location: login.php');
-}
-if (($_SESSION['status'] != "Member")) {
-    header('location: adminindex.php');
-}
+//if ((!isset($_SESSION['email']) && ($_SESSION['status'] != "Member")) ) {
+//    header('location: login.php');
+//}
+//if (($_SESSION['status'] != "Member")) {
+//    header('location: adminindex.php');
+//}
 $user_id = $_SESSION['id'];
 
 $user_query = "select id, name, email, contact, city, address from users where id = '$user_id'";
@@ -183,10 +183,17 @@ if ($no_of_user_products == 0) {
         </table>
     </div>
 
-    <script>
-        function showtxt() {
-            var fartxt = document.getElementById('fileToUpload').value;
-            document.getElementById('showtext').innerHTML = fartxt;
+    <script type="text/javascript">
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
         }
     </script>
 
@@ -210,13 +217,9 @@ if ($no_of_user_products == 0) {
                         <form action="paymentsuccess.php?id=<?php echo $billing_id; ?>" method="post"
                               enctype="multipart/form-data">
 
-                            <div class="fileinputs">
-                                <input type="file" class="file" name="fileToUpload" id="fileToUpload" accept="image/*"
-                                       onchange="showtxt()"/>
-                                <div class="fakefile">
-                                    <input type="button" value="ค้นหาไฟล์" required="true"/>
-                                    <span id="showtext"> เลือกรูปใบเสร็จชำระเงิน</span></div>
-                            </div>
+                            <input class="btn btn-info" type='file' onchange="readURL(this);" name="fileToUpload" accept="image/*"
+                                   id="fileToUpload" style="margin-bottom: 20px"/>
+
                             <br>
                             <script>
                                 var filename = document.getElementById('fileToUpload');

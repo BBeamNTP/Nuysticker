@@ -1,23 +1,23 @@
 <?php
-function function_alert($message) {
+session_start();
+require 'connection.php';
 
+function function_alert($message) {
     // Display the alert box
     echo "<script>alert('$message');</script>";
 }
-session_start();
 if(!isset($_SESSION['email'])){
     header('location: login.php');
 }
-require 'connection.php';
-echo " name : ".$name = $_POST['name'];
-echo " price : ".$price = $_POST['price'];
-echo " types : ".$types = $_POST['types'];
+$name = $_POST['name'];
+$price = $_POST['price'];
+$types = $_POST['types'];
 $sql = "select * from items order by id desc limit 0,1";
 $result=mysqli_query($con,$sql);
 $num_result = mysqli_num_rows($result);
 $dbarr = mysqli_fetch_row($result) ;
-echo " id : ".$item_id = $dbarr[0]+1 ; // นำค่า id มาเพิ่มให้กับค่ารหัสสินค้าครั้งละ1
-echo " path : ".$path = $types.(string)$item_id.".jpg";
+$item_id = $dbarr[0]+1 ; // นำค่า id มาเพิ่มให้กับค่ารหัสสินค้าครั้งละ1
+$path = $types.(string)$item_id.".jpg";
 
 $target_dir = "img/product/".$types."/";
 //$target_file = $target_dir . basename($_FILES.$path); //ชื่อไฟล์แบบเดิม
