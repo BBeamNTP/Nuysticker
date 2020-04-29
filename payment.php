@@ -217,7 +217,8 @@ if ($no_of_user_products == 0) {
                         <form action="paymentsuccess.php?id=<?php echo $billing_id; ?>" method="post"
                               enctype="multipart/form-data">
 
-                            <input class="btn btn-warning" type='file' onchange="readURL(this);" name="fileToUpload" accept="image/*" id="fileToUpload" style="margin-bottom: 20px"/>
+                            <input class="btn btn-info" type='file' onchange="readURL(this);" name="fileToUpload" accept="image/*"
+                                   id="fileToUpload" style="margin-bottom: 20px"/>
 
                             <br>
                             <script>
