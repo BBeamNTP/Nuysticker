@@ -143,11 +143,11 @@ if ($no_of_user_products == 0) {
             <tbody>
             <label><h4> บิลเลขที่ <?php echo $billing_id ?> รายการของคุณมีดังนี้ </h4></label>
             <tr>
-                <th>รายการที่</th>
-                <th>ชื่อรายการ</th>
-                <th>จำนวน (ชิ้น)</th>
-                <th>ราคา (บาท/ชิ้น)</th>
-                <th>ราคารวม (บาท)</th>
+                <th class="text-center">รายการที่</th>
+                <th class="text-center">ชื่อรายการ</th>
+                <th class="text-center">จำนวน (ชิ้น)</th>
+                <th class="text-center">ราคา (บาท/ชิ้น)</th>
+                <th class="text-center">ราคารวม (บาท)</th>
             </tr>
             <?php
             $user_products_result = mysqli_query($con, $user_products_query) or die(mysqli_error($con));
@@ -156,11 +156,11 @@ if ($no_of_user_products == 0) {
             while ($row = mysqli_fetch_array($user_products_result)) {
                 ?>
                 <tr>
-                    <th><?php echo $counter ?></th>
+                    <th class="text-center"><?php echo $counter ?></th>
                     <th><?php echo $row['name'] ?></th>
-                    <th><?php echo $row['quantity'] ?></th>
-                    <th><?php echo $row['price'] ?></th>
-                    <th><?php echo $row['totalprice'] ?></th>
+                    <th class="text-center"><?php echo number_format(  $row['quantity']  ) ?></th>
+                    <th class="text-right"><?php echo number_format(  $row['price'] , 2 ) ?></th>
+                    <th class="text-right"><?php echo number_format(  $row['totalprice'] , 2 ) ?></th>
                 </tr>
                 <?php $counter = $counter + 1;
             } ?>
@@ -168,8 +168,8 @@ if ($no_of_user_products == 0) {
                 <th></th>
                 <th></th>
                 <th></th>
-                <th><h3>รวมทั้งสิ้น</h3></th>
-                <th><h3><?php echo $sum; ?> บาท </h3></th>
+                <th class="text-right"><h3>รวมทั้งสิ้น</h3></th>
+                <th class="text-right"><h3><?php echo number_format(  $sum , 2 ) ?> </h3></th>
             </tr>
             </tbody>
         </table>
@@ -199,7 +199,7 @@ if ($no_of_user_products == 0) {
                               enctype="multipart/form-data">
                             <h4><p> ผู้สั่งซื้อ : <?php echo $row['user_id']; ?></p></h4>
                             <h4><p> หมายเลขคำสั่งซื้อ : <?php echo $row['bill_id']; ?></p></h4>
-                            <h4><p> จำนวนเงินที่ต้องชำระ : <?php echo $row['amount']; ?></p></h4>
+                            <h4><p> จำนวนเงินที่ต้องชำระ : <?php echo number_format( $row['amount']  , 2 ); ?> บาท </p></h4>
                             <p>&nbsp; </p>
                             <div class="form-check">
                                 <h4><p>สถานะ :&nbsp; </p></h4>
@@ -249,7 +249,7 @@ if ($no_of_user_products == 0) {
                 <?php
                 echo $images = $row['image'];
                 if (($images == "") && ($images == null)) { ?>
-                    <h3><b>ยังไม่มีสลิกชำระเงินจากลูกค้า</b></h3>
+                    <h3><b>ยังไม่มีสลิปชำระเงินจากลูกค้า</b></h3>
                 <?php } else { ?>
                     <img style="width: 400px" src="<?php echo $row['image']; ?>" align="right" id="showImage"
                          class="rounded-circle"

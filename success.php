@@ -27,7 +27,8 @@
             $thai_date_return.= " ".(date("Y",$time)+543);
             return $thai_date_return;
         }
-        $date = thai_date_fullmonth(time());
+//        $date = thai_date_fullmonth(time());`
+        $date = date("d/m/Y");
         $add_billing_query = "insert into billing(id, user_id, amount, status, time) values ('$bill_id', '$user_id','$sum','Not_paid','$date')";
         $add_billing_result = mysqli_query($con, $add_billing_query) or die(mysqli_error($con));
 

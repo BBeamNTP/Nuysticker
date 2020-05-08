@@ -111,10 +111,10 @@ if ($type == "Letter") {
                                         <?php
                                     } else {
                                         if (check_if_added_to_cart($row['id'])) {
-                                            echo '<a href="#" class=btn btn-block btn-success disabled> เพิ่มลงตระกร้าสินค้าแล้ว </a>';
+                                            echo '<a href="#" class=btn btn-block btn-success disabled> เพิ่มลงตะกร้าสินค้าแล้ว </a>';
                                         } else {
                                             ?>
-                                            <input type="submit" name="submit" id="add" value="เพิ่มลงตระกร้าสินค้า"
+                                            <input type="submit" name="submit" id="add" value="เพิ่มลงตะกร้าสินค้า"
                                                    class="btn btn-block btn-primary">
                                             <?php
                                         }
@@ -138,7 +138,7 @@ if ($type == "Letter") {
         <nav>
             <ul class="pagination">
                 <li>
-                    <a href="./products.php?page=1" aria-label="Previous">
+                    <a href="./products.php?page=1&type=<?php echo $type; ?>" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>

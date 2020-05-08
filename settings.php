@@ -1,12 +1,10 @@
 <?php
     session_start();
     require 'connection.php';
-if ((!isset($_SESSION['email']) && ($_SESSION['status'] != "Member")) ) {
+if (!isset($_SESSION['email']) ) {
     header('location: login.php');
 }
-if (($_SESSION['status'] != "Member")) {
-    header('location: adminindex.php');
-}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,7 +39,7 @@ if (($_SESSION['status'] != "Member")) {
                                 <input type="password" class="form-control" name="retype" placeholder="รหัสผ่านใหม่ อีกครั้ง">
                             </div>
                             <div class="form-group">
-                                <input type="submit" class="btn btn-primary" value="ยืนยัน">
+                                <input type="submit" class="btn" style="background-color: #00adff" value="ยืนยัน">
                             </div>
                         </form>
                     </div>

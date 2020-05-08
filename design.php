@@ -5,7 +5,7 @@ if ((!isset($_SESSION['email']) && ($_SESSION['status'] != "Member")) ) {
     header('location: login.php');
 }
 if (($_SESSION['status'] != "Member")) {
-    header('location: adminindex.php');
+    header('location: admin.php');
 }
 ?>
 
@@ -93,7 +93,7 @@ if (($_SESSION['status'] != "Member")) {
                             <p id="demo3" hidden></p>
                             <p id="demo4"></p>
                             <div class="form-group">
-                                <label for="comment">จำนวนตารางเมตร:</label>
+                                <label for="comment">จำนวนตารางเมตร :</label>
                                 <input type="number" class="form-control" name="meter" id="meter"
                                        placeholder="หน่วยตารางเมตร" maxlength="2" required pattern="[0-9]{2}"
                                        onkeyup="myFunction()">
@@ -137,22 +137,22 @@ if (($_SESSION['status'] != "Member")) {
                             </script>
 
 
-                            <div class="form-check"><b> ประเภทสติกเกอร์ : </b>&nbsp;
+                            <div class="form-check"><b> ประเภทสติกเกอร์ : <br></b>&nbsp;
                                 <input type="radio" id="price1"
                                        name="price" <?php if (isset($types) && $types == "female") echo "checked"; ?>
                                        value="1000" onclick="myFunction(this), validateForm()" required>
-                                สะท้อนแสง 1000 บาท / 1 เมตร
+                                สะท้อนแสง 1000 บาท / 1 ตารางเมตร <br>
                                 &nbsp;
                                 <input type="radio" id="price2"
                                        name="price" <?php if (isset($types) && $types == "male") echo "checked"; ?>
                                        value="800" onclick="myFunction(this), validateForm()" required>
-                                ไม่สะท้อนแสง 800 บาท / 1 เมตร
+                                ไม่สะท้อนแสง 800 บาท / 1 ตารางเมตร
                             </div>
                             <br>
                             <p id="demo7"></p>
                             <br>
                             <div class="form-group">
-                                <label for="comment">รายละเอียดเพิ่มเติม:</label>
+                                <label for="comment">รายละเอียดเพิ่มเติม :</label>
                                 <textarea class="form-control" rows="3" id="comment" name="comment"></textarea>
                             </div>
 

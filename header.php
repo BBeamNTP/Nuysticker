@@ -22,9 +22,9 @@
                     <li><a href="billing.php"><span class="glyphicon glyphicon-usd"></span> ชำระสินค้า </a>
                     </li>
 
-                    <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> ตระกร้าสินค้า </a>
+                    <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> ตะกร้าสินค้า </a>
                     </li>
-                    <li><a href="settings.php"><span class="glyphicon glyphicon-cog"></span> ตั่งค่า </a></li>
+                    <li><a href="settings.php"><span class="glyphicon glyphicon-cog"></span> ตั้งค่า </a></li>
                     <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> ออกจากระบบ </a></li>
                     <?php
                 } else {

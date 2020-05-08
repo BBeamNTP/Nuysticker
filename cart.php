@@ -5,7 +5,7 @@ if ((!isset($_SESSION['email']) && ($_SESSION['status'] != "Member")) ) {
     header('location: login.php');
 }
 if (($_SESSION['status'] != "Member")) {
-    header('location: adminindex.php');
+    header('location: admin.php');
 }
 $user_id = $_SESSION['id'];
 $user_products_query = "select * from users_items ut inner join items it on it.id=ut.item_id where ut.user_id='$user_id' and ut.status = 'Added to cart'";
@@ -46,11 +46,11 @@ if ($no_of_user_products == 0) {
         <table class="table table-bordered table-striped">
             <tbody>
             <tr>
-                <th>รายการที่</th>
-                <th>ชื่อรายการ</th>
-                <th>จำนวน (ชิ้น)</th>
-                <th>ราคา (บาท/ชิ้น)</th>
-                <th>ราคารวม (บาท)</th>
+                <th class="text-center">รายการที่</th>
+                <th class="text-center">ชื่อรายการ</th>
+                <th class="text-center">จำนวน (ชิ้น)</th>
+                <th class="text-center">ราคา (บาท/ชิ้น)</th>
+                <th class="text-center" >ราคารวม (บาท)</th>
                 <th></th>
             </tr>
             <?php
@@ -60,12 +60,12 @@ if ($no_of_user_products == 0) {
             while ($row = mysqli_fetch_array($user_products_result)) {
                 ?>
                 <tr>
-                    <th><?php echo $counter ?></th>
+                    <th class="text-center"><?php echo $counter ?></th>
                     <th><?php echo $row['name'] ?></th>
-                    <th><?php echo $row['quantity'] ?></th>
-                    <th><?php echo $row['price'] ?></th>
-                    <th><?php echo $row['totalprice'] ?></th>
-                    <th><a href='cart_remove.php?id=<?php echo $row['id'] ?>'>ลบรายการ</a></th>
+                    <th class="text-center"><?php echo number_format( $row['quantity'] ) ?></th>
+                    <th class="text-right"><?php echo number_format( $row['price'] , 2 ) ?></th>
+                    <th class="text-right"><?php echo number_format( $row['totalprice'] , 2 )  ?></th>
+                    <th class="text-center"><a href='cart_remove.php?id=<?php echo $row['id'] ?>'>ลบรายการ</a></th>
                 </tr>
                 <?php $counter = $counter + 1;
             } ?>
@@ -73,9 +73,9 @@ if ($no_of_user_products == 0) {
                 <th></th>
                 <th></th>
                 <th></th>
-                <th>รวมทั้งสิ้น</th>
-                <th><?php echo $sum; ?> บาท</th>
-                <th><a href="success.php?id=<?php echo $user_id ?>&sum=<?php echo $sum; ?>" class="btn btn-primary">ยืนยันการสั่งซื้อ</a>
+                <th class="text-right">รวมทั้งสิ้น</th>
+                <th class="text-right"><?php echo number_format( $sum , 2 ) ?></th>
+                <th class="text-center"><a href="success.php?id=<?php echo $user_id ?>&sum=<?php echo $sum; ?>" class="btn btn-primary">ยืนยันการสั่งซื้อ</a>
                 </th>
             </tr>
             </tbody>

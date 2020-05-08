@@ -1,6 +1,7 @@
 <?php
 session_start();
 require '../connection.php';
+require 'baht_text.php';
 
 if (!isset($_SESSION['email'])) {
     header('location: login.php');
@@ -15,13 +16,6 @@ $sum = 0;
 $user_query = "select us.id, us.name, us.email, us.contact, us.city, us.address, bl.time, bl.id from users us inner join billing bl on us.id=bl.user_id where us.id = '$user_id' and bl.id='$billing_id'";
 $user_result = mysqli_query($con, $user_query) or die(mysqli_error($con));
 $row = mysqli_fetch_array($user_result);
-//echo $row['time'];
-//echo $row['id'];
-//echo $row['name'];
-//echo $row['email'];
-//echo $row['contact'];
-//echo $row['city'];
-//echo $row['address'];
 $user_email = $row['email'];
 $user_name = $row['name']; //name user
 $user_status = $_SESSION['status']; //status user
@@ -55,30 +49,33 @@ if ($no_of_user_products == 0) {
         }
     </style>
 
-
-    <title>NuySticker Store</title>
+    <title>Nuy Sticker Store</title>
     <link rel="stylesheet" href="style.css" media="all"/>
     <input type="image" src="print.png" width="20px" height="auto" align="right" style="padding-top:6% " name="button"
            id="button" value="Print" onclick="print();">
 </head>
 <body>
 <header class="clearfix">
+    <h3 style="color: #5d6975; padding-left: 80%">ใบเสร็จเลขที่ : <?php echo $billing_id;?></h3>
+    <h3 style="color: #5d6975; padding-left: 80%">วันที่ : <?php echo $billing_time;?></h3>
+
     <div id="logo">
         <img src="logo.jpg" ">
     </div>
-    <div align="center"><h1>ใบเสร็จชำระเงิน</h1></div>
+
+    <div align="center"><h1>ใบเสร็จรับเงิน</h1></div>
     <div id="company" class="clearfix">
-        <div>ร้าน NuySticker Shop.</div>
-        <div>เลขที่ 25 ถนน สวนผัก แขวง ตลิ่งชัน <br/> เขต ตลิ่งชัน กรุงเทพมหานคร 10170</div>
+        <div>ร้าน Nuy Sticker Shop</div>
+        <div>เลขที่ 25 ถนนสวนผัก แขวงตลิ่งชัน <br/> เขตตลิ่งชัน กรุงเทพมหานคร 10170</div>
         <div>เบอร์โทร 028867366</div>
-        <div>อีเมล์ <a href="mailto:company@example.com">nuysticker@gmail.com</a></div>
+        <div>อีเมล <a href="mailto:company@example.com">nuysticker@gmail.com</a></div>
     </div>
     <div id="project">
         <div><span>วันที่</span> <?php echo $billing_time ?></div>
         <div><span>สั่งซื้อโดย</span> <?php echo $user_name ?> </div>
         <div><span>ที่อยู่</span> <?php echo $user_address ?></div>
         <div><span>เบอร์โทร</span> <?php echo $user_contact ?></div>
-        <div><span>อีเมล์</span> <?php echo $user_email ?></div>
+        <div><span>อีเมล</span> <?php echo $user_email ?></div>
     </div>
 </header>
 <main>
@@ -90,7 +87,7 @@ if ($no_of_user_products == 0) {
         <div class="container">
             <table class="table table-bordered table-striped">
                 <tbody>
-                <tr>
+                <tr style="background-color: rgba(239,253,0,0.31)" >
                     <th>รายการที่</th>
                     <th>ชื่อรายการ</th>
                     <th>จำนวน (ชิ้น)</th>
@@ -104,32 +101,37 @@ if ($no_of_user_products == 0) {
                 while ($row = mysqli_fetch_array($user_products_result)) {
 
                     ?>
-                    <tr>
-                        <th><?php echo $counter ?></th>
-                        <th><?php echo $row['name'] ?></th>
-                        <th><?php echo $row['quantity'] ?></th>
-                        <th><?php echo $row['price'] ?></th>
-                        <th><?php echo $row['totalprice'] ?></th>
+                   <tr>
+                        <th style="background-color: rgba(253,245,0,0.06)"><?php echo $counter ?></th>
+                        <th style="text-align: left;"><?php echo $row['name'] ?></th>
+                        <th style="text-align: right; background-color: rgba(253,245,0,0.06)"><?php echo number_format( $row['quantity'] ) ?></th>
+                        <th style="text-align: right"><?php echo number_format(  $row['price'] , 2 )?></th>
+                        <th style="text-align: right; background-color: rgba(253,245,0,0.06)"><?php echo number_format(  $row['totalprice'] , 2 ) ?></th>
                     </tr>
                     <?php $counter = $counter + 1;
                 } ?>
 
                 <tr>
+                <th></th>
+                    <th style="text-align: right" ><br><?php echo "(".baht_text($sum).")"; // สามร้อยหกสิบเอ็ดบาทเจ็ดสิบห้าสตางค์ ?><br></th>
                     <th></th>
-                    <th></th>
-                    <th></th>
-                    <th><br>รวมทั้งสิ้น <br></th>
-                    <th><br><?php echo $sum; ?> บาท <br></th>
+                    <th style="text-align: right"><br>รวมทั้งสิ้น<br></th>
+
+                    <th style="text-align: right"><br><?php echo number_format(  $sum , 2 ) ; ?><br></th>
                 </tr>
                 </tbody>
             </table>
+            <div style="max-width: 200px;padding-left: 65%; padding-top: 10%">
+
+                <img src="../img/Untitled-1.png" style="max-width: 200px">
+                <h3 style="color: #5d6975; margin-left: 50px">วันที่ <?php echo $billing_time ?></h3>
+            </div>
+
         </div>
         </tbody>
     </table>
 
 </main>
-<footer>
-    Invoice was created on a computer and is valid without the signature and seal.
-</footer>
+
 </body>
 </html>

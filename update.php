@@ -21,7 +21,7 @@ $dbarr = mysqli_fetch_row($result) ;
 $path = $types.(string)$item_id.".jpg";
 
 
-$target_dir = "img/".$types."/";
+$target_dir = "img/product/".$types."/";
 //$target_file = $target_dir . basename($_FILES.$path); //ชื่อไฟล์แบบเดิม
 $target_file = $target_dir . $path;  //เปลียรนชื่อไฟล์ใหม่
 
@@ -41,7 +41,8 @@ if(isset($_POST["submit"])) {
 // Check if file already exists
 if (file_exists($target_file)) {
     echo "Sorry, file already exists.";
-    $uploadOk = 0;
+    @unlink($target_dir.$path); 
+    // $uploadOk = 0;
 }
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 50000000) {

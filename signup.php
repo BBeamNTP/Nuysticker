@@ -32,7 +32,7 @@
                                 <input type="text" class="form-control" name="name" placeholder="ชื่อ" required="true">
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" name="email" placeholder="อีเมล์" required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                                <input type="email" class="form-control" name="email" placeholder="อีเมล" required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
                             </div> 
                             <div class="form-group">
                                 <input type="password" class="form-control" name="password" placeholder="รหัสผ่าน (อย่างน้อย 6 ตัว)" required="true" pattern=".{6,}">

@@ -80,20 +80,19 @@ $user_id = $_SESSION['id'];
         <table class="table table-bordered table-striped">
             <tbody>
             <tr>
-                <th width="11%"> ลำดับที่</th>
-                <th width="18%">หมายเลขรายการ</th>
-                <th width="22%">วันที่ทำรายการ</th>
-                <th width="29%">สถานะ</th>
-                <th width="20%">รายละเอียด</th>
+                <th width="11%" class="text-center"> ลำดับที่</th>
+
+                <th width="22%" class="text-center">วันที่ทำรายการ</th>
+                <th width="29%" class="text-center">สถานะ</th>
+                <th width="20%" class="text-center">รายละเอียด</th>
             </tr>
             <?php
             $counter = 1;
             while ($row = mysqli_fetch_array($user_products_result)) {
                 ?>
                 <tr>
-                    <th><?php echo $counter ?></th>
-                    <th><?php echo $row['id'] ?></th>
-                    <th><?php echo $row['time'] ?></th>
+                    <th class="text-center"><?php echo $counter ?></th>
+                    <th class="text-center"><?php echo $row['time'] ?></th>
                     <th><?php if ($row['status'] == 'Not_paid') {
                             echo "ยังไม่ได้ชำระเงิน";
                         } else if ($row['status'] == 'Paid') {
@@ -105,10 +104,10 @@ $user_id = $_SESSION['id'];
                         } ?>
 
                     </th>
-                    <th>
+                    <th class="text-center">
                         <form id="form1" name="form1" method="post"
                               action="admindetailitem.php?id=<?php echo $row['id']; ?>&user_id=<?php echo $row['user_id']; ?>">
-                            <input type="submit" name="submit" id="add" value="ตรวจสอบลายละเอียด" class="btn btn-info">
+                            <input type="submit" name="submit" id="add" value="ตรวจสอบรายละเอียด" class="btn btn-info">
                         </form>
 
                     </th>

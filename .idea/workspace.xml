@@ -2,13 +2,118 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5e22d20-ef0a-4c41-8dd1-d02b0a80bdd0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/img/payment/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/product/Letter/Letter31.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/addproduct.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/store-17-04-63.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/Picture32.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/Untitled-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/Untitled-1.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/payment/1/payment-11-1-07-05-63.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/payment/1/payment-8-1-17-04-63.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/payment/11/payment-8-11-30-04-63.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/payment/13/payment-8-13-01-05-63.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/payment/14/payment-8-14-01-05-63.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/payment/2/payment-8-2-18-04-63.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/payment/7/payment-8-7-29-04-63.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/payment/9/payment-8-9-29-04-63.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Custom/8_33Design01/Design0133.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Custom/8_34Design01/Design0134.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Custom/8_35Design01/Design0135.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/DesignExample/DesignExample21.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/DesignExample/DesignExample22.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/DesignExample/DesignExample23.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/DesignExample/DesignExample24.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/DesignExample/DesignExample25.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/DesignExample/DesignExample26.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/DesignExample/DesignExample27.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/DesignExample/DesignExample28.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/DesignExample/DesignExample29.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/DesignExample/DesignExample30.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/DesignExample/DesignExample33.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/DesignExample/DesignExample34.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/DesignExample/timeline_20200308_20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/DesignExample/timeline_20200308_205506.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Letter/Letter1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Letter/Letter10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Letter/Letter11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Letter/Letter2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Letter/Letter3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Letter/Letter32.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Letter/Letter4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Letter/Letter5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Letter/Letter6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Letter/Letter7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Letter/Letter8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Letter/Letter9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Picture/Picture12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Picture/Picture13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Picture/Picture14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Picture/Picture15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Picture/Picture16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Picture/Picture17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Picture/Picture18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Picture/Picture19.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Picture/Picture20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Picture/Picture31.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Picture/Picture35.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/product/Picture/timeline_20200304_191436.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/รายการที่ต้องทำ.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/invoice/baht_text.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settingsadmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Nuysticker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Nuysticker.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminbilling.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminbilling.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admindetailitem.php" beforeDir="false" afterPath="$PROJECT_DIR$/admindetailitem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminquery.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminquery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminupdateproduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminupdateproduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billing.php" beforeDir="false" afterPath="$PROJECT_DIR$/billing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/css/bootstrap-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/css/bootstrap-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/css/bootstrap-theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/css/bootstrap-theme.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/js/jquery-3.2.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/js/jquery-3.2.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/js/npm.js" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/js/npm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart_add.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart_add.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart_remove.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart_remove.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/check_if_added.php" beforeDir="false" afterPath="$PROJECT_DIR$/check_if_added.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/connection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/final-17-01-63.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/final-17-01-63.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deleteproduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/deleteproduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/design.php" beforeDir="false" afterPath="$PROJECT_DIR$/design.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/detailbilling.php" beforeDir="false" afterPath="$PROJECT_DIR$/detailbilling.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header2.php" beforeDir="false" afterPath="$PROJECT_DIR$/header2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/headeradmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/headeradmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/product/Letter/Letter31.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/product/Letter/Letter31.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invoice/invoice.php" beforeDir="false" afterPath="$PROJECT_DIR$/invoice/invoice.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invoice/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/invoice/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login_submit.php" beforeDir="false" afterPath="$PROJECT_DIR$/login_submit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paymentsuccess.php" beforeDir="false" afterPath="$PROJECT_DIR$/paymentsuccess.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setting_script.php" beforeDir="false" afterPath="$PROJECT_DIR$/setting_script.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/settings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/signup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/success.php" beforeDir="false" afterPath="$PROJECT_DIR$/success.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/update.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/updatedetailpay.php" beforeDir="false" afterPath="$PROJECT_DIR$/updatedetailpay.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/updateuser.php" beforeDir="false" afterPath="$PROJECT_DIR$/updateuser.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/upload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_registration_script.php" beforeDir="false" afterPath="$PROJECT_DIR$/user_registration_script.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,15 +162,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Nuysticker\invoice" />
-      <recent name="C:\xampp\htdocs\Nuysticker\img" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Nuysticker" />
       <recent name="C:\xampp\htdocs\Nuysticker\img" />
       <recent name="C:\xampp\htdocs\Nuysticker\invoice" />
       <recent name="C:\xampp\htdocs\Nuysticker\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Nuysticker\invoice" />
+      <recent name="C:\xampp\htdocs\Nuysticker\img" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -134,7 +239,18 @@
       <workItem from="1587893112261" duration="4931000" />
       <workItem from="1588052247298" duration="36000" />
       <workItem from="1588070302382" duration="11421000" />
-      <workItem from="1588130545334" duration="1217000" />
+      <workItem from="1588130545334" duration="1740000" />
+      <workItem from="1588172738119" duration="3260000" />
+      <workItem from="1588227733076" duration="1271000" />
+      <workItem from="1588319419641" duration="1192000" />
+      <workItem from="1588347109306" duration="796000" />
+      <workItem from="1588427541044" duration="85000" />
+      <workItem from="1588512783037" duration="16000" />
+      <workItem from="1588570333893" duration="9000" />
+      <workItem from="1588702280931" duration="131000" />
+      <workItem from="1588826410452" duration="3235000" />
+      <workItem from="1588843201472" duration="830000" />
+      <workItem from="1588947479844" duration="11000" />
     </task>
     <servers />
   </component>
@@ -160,15 +276,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1587072156701" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1587802465766">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1588427623811">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-983" y="227" key="FileChooserDialogImpl/-1600.0.1600.860/0.0.1920.1040@-1600.0.1600.860" timestamp="1587539239677" />
-    <state x="740" y="275" key="FileChooserDialogImpl/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1587802465766" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1587042344836">
+    <state x="740" y="275" key="FileChooserDialogImpl/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1588427623811" />
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1588319437391">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1587042344836" />
+    <state x="794" y="443" key="NewPhpFileDialog/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1588319437391" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1585826101453">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -177,17 +293,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1585833028499" />
-    <state x="-1053" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1588130546733">
+    <state x="-1053" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1588947487631">
       <screen x="-1600" y="0" width="1600" height="860" />
     </state>
-    <state x="-1053" y="284" key="com.intellij.ide.util.TipDialog/-1600.0.1600.860/0.0.1920.1040@-1600.0.1600.860" timestamp="1588130546733" />
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1587705140041" />
+    <state x="-1053" y="284" key="com.intellij.ide.util.TipDialog/-1600.0.1600.860/0.0.1920.1040@-1600.0.1600.860" timestamp="1588947487631" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1588347115689" />
     <state x="547" y="284" key="com.intellij.ide.util.TipDialog/0.0.1600.860/1600.0.1920.1040@0.0.1600.860" timestamp="1585289763547" />
-    <state x="0" y="0" width="1920" height="1040" key="find.popup" timestamp="1588105290584">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1600" y="0" width="1600" height="860" key="find.popup" timestamp="1588843369223">
+      <screen x="-1600" y="0" width="1600" height="860" />
     </state>
-    <state x="-1600" y="0" width="1600" height="860" key="find.popup/-1600.0.1600.860/0.0.1920.1040@-1600.0.1600.860" timestamp="1588097891072" />
-    <state x="0" y="0" width="1920" height="1040" key="find.popup/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1588105290584" />
+    <state x="-1600" y="0" width="1600" height="860" key="find.popup/-1600.0.1600.860/0.0.1920.1040@-1600.0.1600.860" timestamp="1588843369223" />
+    <state x="0" y="0" width="1920" height="1040" key="find.popup/-1600.0.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1588829042282" />
     <state x="-1315" y="101" key="new project wizard" timestamp="1587539224841">
       <screen x="-1600" y="0" width="1600" height="860" />
     </state>

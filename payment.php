@@ -1,12 +1,12 @@
 <?php
 session_start();
 require 'connection.php';
-//if ((!isset($_SESSION['email']) && ($_SESSION['status'] != "Member")) ) {
-//    header('location: login.php');
-//}
-//if (($_SESSION['status'] != "Member")) {
-//    header('location: adminindex.php');
-//}
+if ((!isset($_SESSION['email']) && ($_SESSION['status'] != "Member")) ) {
+    header('location: login.php');
+}
+if (($_SESSION['status'] != "Member")) {
+    header('location: admin.php');
+}
 $user_id = $_SESSION['id'];
 
 $user_query = "select id, name, email, contact, city, address from users where id = '$user_id'";
@@ -134,7 +134,7 @@ if ($no_of_user_products == 0) {
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
-                    <td align="right"><br>
+                    <td><br>
                         <button type="submit" class="btn btn-primary">ยืนยันแก้ไขข้อมูล</button>
                     </td>
                 </tr>
@@ -149,11 +149,11 @@ if ($no_of_user_products == 0) {
             <label><h4> บิลเลขที่ <?php echo $billing_id ?> รายการของคุณมีดังนี้ </h4></label>
 
             <tr>
-                <th>รายการที่</th>
-                <th>ชื่อรายการ</th>
-                <th>จำนวน (ชิ้น)</th>
-                <th>ราคา (บาท/ชิ้น)</th>
-                <th>ราคารวม (บาท)</th>
+                <th class="text-center">รายการที่</th>
+                <th class="text-center">ชื่อรายการ</th>
+                <th class="text-center">จำนวน (ชิ้น)</th>
+                <th class="text-center">ราคา (บาท/ชิ้น)</th>
+                <th class="text-center">ราคารวม (บาท)</th>
             </tr>
             <?php
             $user_products_result = mysqli_query($con, $user_products_query) or die(mysqli_error($con));
@@ -163,11 +163,11 @@ if ($no_of_user_products == 0) {
 
                 ?>
                 <tr>
-                    <th><?php echo $counter ?></th>
+                    <th class="text-center"><?php echo $counter ?></th>
                     <th><?php echo $row['name'] ?></th>
-                    <th><?php echo $row['quantity'] ?></th>
-                    <th><?php echo $row['price'] ?></th>
-                    <th><?php echo $row['totalprice'] ?></th>
+                    <th class="text-center" ><?php echo number_format( $row['quantity'] ) ?></th>
+                    <th class="text-right"><?php echo number_format( $row['price'] , 2 ) ?></th>
+                    <th class="text-right"><?php echo number_format( $row['totalprice'], 2) ?></th>
 
                 </tr>
                 <?php $counter = $counter + 1;
@@ -176,31 +176,24 @@ if ($no_of_user_products == 0) {
                 <th></th>
                 <th></th>
                 <th></th>
-                <th><h3>รวมทั้งสิ้น</h3></th>
-                <th><h3><?php echo $sum; ?> บาท </h3></th>
+                <th class="text-right"><h3>รวมทั้งสิ้น</h3></th>
+                <th class="text-right"><h3><?php echo number_format($sum , 2 ) ?>  </h3></th>
             </tr>
             </tbody>
         </table>
     </div>
 
-    <script type="text/javascript">
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('#blah').attr('src', e.target.result);
-                }
-
-                reader.readAsDataURL(input.files[0]);
-            }
+    <script>
+        function showtxt() {
+            var fartxt = document.getElementById('fileToUpload').value;
+            document.getElementById('showtext').innerHTML = fartxt;
         }
     </script>
 
     <div class="container">
         <center>
             <br><br>
-            <h1><b>แจ้งชำระสินค้าที่นี่</b></h1>
+            <h1><b>เลือกการชำระสินค้าที่นี่</b></h1>
             <br>
             <img src="img/142845.jpg" width="450px" height="auto">
             <br><br><br><br>
@@ -211,16 +204,24 @@ if ($no_of_user_products == 0) {
 
     <table width="771" border="0" align="center">
         <tr>
+        
             <td width="509" rowspan="3">
+            <h1><b>แนบใบเสร็จชำระเงินที่นี่</b></h1><br>
                 <div>
+                
                     <div style="height: auto; width: 500px">
                         <form action="paymentsuccess.php?id=<?php echo $billing_id; ?>" method="post"
                               enctype="multipart/form-data">
 
-                            <input class="btn btn-info" type='file' onchange="readURL(this);" name="fileToUpload" accept="image/*"
-                                   id="fileToUpload" style="margin-bottom: 20px"/>
-
+                            <div class="fileinputs">
+                                <input type="file" class="file" name="fileToUpload" id="fileToUpload" accept="image/*"
+                                       onchange="showtxt()"/>
+                                <div class="fakefile">
+                                    <input type="button"  class="btn btn-warning" value="ค้นหาไฟล์" required="true"/>
+                                    <span id="showtext"> เลือกรูปใบเสร็จรับเงิน</span></div>
+                            </div>
                             <br>
+                            
                             <script>
                                 var filename = document.getElementById('fileToUpload');
                                 filename.onchange = function () {
@@ -236,7 +237,7 @@ if ($no_of_user_products == 0) {
                             </script>
                             <br>
                             <div class="form-group">
-                                <input type="submit" class="btn btn-primary" value="ยืนยันการแจ้งชำระ"
+                                <input type="submit" class="btn btn-primary" value="ยืนยันการแจ้งชำระเงิน"
                                        onclick="chkConfirm()">
                             </div>
                         </form>

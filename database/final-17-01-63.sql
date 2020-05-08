@@ -33,7 +33,7 @@ CREATE TABLE `billing` (
   `user_id` int(10) NOT NULL,
   `amount` varchar(100) NOT NULL,
   `status` enum('Not_paid','Wait','Paid','Fail') NOT NULL,
-  `time` varchar(100) NOT NULL DEFAULT current_timestamp()
+  `time` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------

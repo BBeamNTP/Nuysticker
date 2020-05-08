@@ -5,7 +5,7 @@ if ((!isset($_SESSION['email']) && ($_SESSION['status'] != "Member"))) {
     header('location: login.php');
 }
 if (($_SESSION['status'] != "Member")) {
-    header('location: adminindex.php');
+    header('location: admin.php');
 }
 $user_id = $_SESSION['id'];
 $user_products_query = "select * from billing where user_id='$user_id' ";

@@ -5,7 +5,7 @@ if ((!isset($_SESSION['email']) && ($_SESSION['status'] != "Member")) ) {
     header('location: login.php');
 }
 if (($_SESSION['status'] != "Member")) {
-    header('location: adminindex.php');
+    header('location: admin.php');
 }
 $user_id = $_SESSION['id'];
 $user_billing_query = "select * from billing where user_id='$user_id' ORDER BY time DESC";
@@ -36,20 +36,18 @@ $sum = 0;
         <table class="table table-bordered table-striped">
             <tbody>
             <tr>
-                <th width="6%"> ลำดับที่</th>
-                <th width="17%">หมายเลขรายการ</th>
-                <th width="19%">วันที่ทำรายการ</th>
-                <th width="13%">สถานะ</th>
-                <th width="14%">ใบเสร็จ</th>
+                <th width="6%" class="text-center"> ลำดับที่</th>
+                <th width="19%" class="text-center">วันที่ทำรายการ</th>
+                <th width="13%" class="text-center">สถานะ</th>
+                <th width="14%" class="text-center">ใบเสร็จ</th>
             </tr>
             <?php
             $counter = 1;
             while ($row = mysqli_fetch_array($user_billing_result)) {
                 ?>
                 <tr>
-                    <th><?php echo $counter ?></th>
-                    <th><?php echo $row['id'] ?></th>
-                    <th><?php echo $row['time'] ?></th>
+                    <th class="text-center"><?php echo $counter ?></th>
+                    <th class="text-center"><?php echo $row['time'] ?></th>
                     <th><?php if ($row['status'] == 'Not_paid') {
                             echo "ยังไม่ได้ชำระเงิน";
                         } else if ($row['status'] == 'Paid')  {
@@ -61,13 +59,13 @@ $sum = 0;
                         } ?>
 
                     </th>
-                    <th>
+                    <th class="text-center">
                         <?php if ($row['status'] == 'Not_paid') { ?>
                             <a href="payment.php?id=<?php echo $row['id']; ?>" class=btn btn-block btn-success disabled> กรุณาชำระเงิน ชำระเงินที่นี่ </a>
                         <?php } else if ($row['status'] == 'Paid') { ?>
                             <form id="form1" name="form1" method="post" target="_blank"
                                   action="./invoice/invoice.php?id=<?php echo $row['id']; ?>">
-                                <input type="submit" name="submit" id="add" value="รายละเอียดบิล" class="btn btn-info">
+                                <input type="submit" name="submit" id="add" value="รายละเอียดใบเสร็จ" class="btn btn-info">
                             </form>
                         <?php } else if ($row['status'] == 'Wait') { ?>
                             <a href="#" class=btn btn-block btn-success disabled> รอการตรวจสอบการชำระเงิน </a>

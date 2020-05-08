@@ -1,14 +1,14 @@
 <?php
-session_start();
-require 'connection.php';
-
 function function_alert($message) {
+
     // Display the alert box
     echo "<script>alert('$message');</script>";
 }
+session_start();
 if(!isset($_SESSION['email'])){
     header('location: login.php');
 }
+require 'connection.php';
 $name = $_POST['name'];
 $price = $_POST['price'];
 $types = $_POST['types'];
@@ -48,7 +48,8 @@ if(isset($_POST["submit"])) {
 // Check if file already exists
 if (file_exists($target_file)) {
     echo "Sorry, file already exists.";
-    $uploadOk = 0;
+    echo @unlink($target_dir.$path); 
+    // $uploadOk = 0;
 }
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 50000000) {
@@ -73,14 +74,9 @@ if ($uploadOk == 0) {
         $add_items_query = "insert into items(id, types, name, price, image) values ('$item_id','$types','$name', '$price','$target_file')";
         $add_items_result = mysqli_query($con, $add_items_query) or die(mysqli_error($con));
         mysqli_close($con);
-//        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-    ?>
-        <script type="text/javascript">
-            alert("สร้างรายการสินค้าเรียบร้อยแล้ว")
-            window.location.href = 'adminaddproduct.php';
-        </script>
-
-<?php
+        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+        function_alert("สร้างรายการสินค้าเรียบร้อยแล้ว");
+        echo "<meta http-equiv='refresh' content='0;url=addproduct.php'>";
         exit();
     } else {
         echo "Sorry, there was an error uploading your file.";

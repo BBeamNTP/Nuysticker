@@ -23,8 +23,8 @@ session_start();
             <center>
                 <div id="bannerContent">
                     <p>
-                    <h2>ยินดีต้อนรับสู่ NuySticker Shop.</p>
-                    <a href="products.php?type=all" class="btn btn-danger">เลือกซื้อสินค้าทั้งหมด ที่นี้</a>
+                    <h2>ยินดีต้อนรับสู่ Nuy Sticker Shop</p>
+                    <a href="products.php?type=all" class="btn btn-danger">เลือกซื้อสินค้าทั้งหมด ที่นี่</a>
                 </div>
             </center>
         </div>
